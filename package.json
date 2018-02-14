@@ -7,5 +7,11 @@
 		"build": "cd client && npm install && npm run build && cd ..",
 		"deploy": "cp -a client/build/. public/",
 		"postinstall": "npm run build && npm run deploy && echo 'Client built!'"
+	},
+	"dependencies": {
+		"react-redux": "^5.0.6",
+		"react-router-dom": "^4.2.2",
+		"redux": "^3.7.2",
+		"thunk": "0.0.1"
 	}
 }
