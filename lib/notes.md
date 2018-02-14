@@ -1,27 +1,32 @@
-smithpiano site:
+smithpiano site goals and functionality:
 
 schedule appts online
-	react app
-	customer database
-	schedule database
-
-show technical credibility
-	static assets
-qualify leads before they call or schedule
-	react app wizard(s)
-	static and dynamic assets
-	react app: qualify based on choices
-music bio credibility
-	static assets, migrate existing
-music activity promotion
+	authentication required	
+	react schedule builder components
+	customer table
+	appts table
+	
+show technical services credibility
 	static assets
 
-teaching bio credibility
-	static assets
-teaching materials, studio policy, downloads
-	static assets
-	dynamic assets via react music-studio app
+qualify services leads before they call or schedule
+	react app wizards using static assets
 
+show musician credibility
+	static assets, bio, clips, audio, video, image
+
+promote musician activity
+	static assets, gig schedule
+	advertise for new live music clients
+
+show teaching credibility
+	static assets, bio, clips, audio, video, image
+
+support teaching activity
+	authentication required	
+	static assets 
+	studio policy, downloads
+	connect react music-studio app
 
 ====================================================================
 DATABASE plan: 
@@ -63,9 +68,9 @@ end
 customer.rb
 has_many :appts
 
-class CreateAppts < ActiveRecord::Migration[5.1]
+class CreateCustomers < ActiveRecord::Migration[5.1]
   def change
-    create_table :appts do |t|
+    create_table :customers do |t|
 			t.text			"firstname"
 			t.text			"lastname"
 			t.text			"address1"

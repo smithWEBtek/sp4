@@ -10,9 +10,57 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20180214190217) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "appts", force: :cascade do |t|
+    t.integer "customer_id"
+    t.date "appt_date"
+    t.datetime "appt_start"
+    t.datetime "appt_end"
+    t.text "appt_note"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "assets", force: :cascade do |t|
+    t.string "title"
+    t.string "category"
+    t.string "description"
+    t.string "format"
+    t.string "location"
+    t.string "url", default: "no_url_given"
+  end
+
+  create_table "customers", force: :cascade do |t|
+    t.text "firstname"
+    t.text "lastname"
+    t.text "address1"
+    t.text "address2"
+    t.text "city"
+    t.text "state"
+    t.text "zip"
+    t.text "email"
+    t.text "phone1"
+    t.text "phone2"
+    t.text "brand"
+    t.text "model"
+    t.text "serial"
+    t.text "finish"
+    t.text "about"
+    t.date "last_service"
+    t.date "last_reminder"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.integer "title"
+    t.text "description"
+    t.integer "cost"
+    t.integer "duration"
+  end
 
 end
