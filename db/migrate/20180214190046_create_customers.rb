@@ -3,6 +3,7 @@ class CreateCustomers < ActiveRecord::Migration[5.1]
     create_table :customers do |t|
 			t.text			"firstname"
 			t.text			"lastname"
+			t.text			"fullname", default: 'asdf'
 			t.text			"address"
 			t.text			"city"
 			t.text			"state"

@@ -1,36 +1,24 @@
 class Api::CustomersController < ApplicationController
-	before_action :set_customer, only: [:show, :edit, :update, :destroy]
+	before_action :set_customer, only: [:show, :update, :destroy]
 
 	def index
 		@customers = Customer.all
-		respond_to do |format|
-			format.html { render :index }
-			format.json { render json: @customers }
-		end
+		render json: @customers
 	end
 	
 	def show
-			respond_to do |format|
-			format.html { render :show }
-			format.json { render json: @customer }
-		end
-	end
-
-	def new
-		@customer = Customer.new
+		render json: @customer
 	end
 
 	def create
 		@customer = Customer.new(customer_params)
+		@customer.fullname = @customer.fullname
 		if @customer.save
 			flash[:notice] = "Customer created."
-			redirect_to customer_path(@customer)
+			render json: @customer
 		else
-			render :new
+			render json: { errors: { message: 'customer NOT updated' }}
 		end
-	end
-
-	def edit
 	end
 
 	def update
@@ -39,19 +27,14 @@ class Api::CustomersController < ApplicationController
 			flash[:notice] = "Customer updated."
 			redirect_to customer_path(@customer)
 		else
-			render :new
+			render json: { errors: { message: 'customer NOT updated' }}
 		end
 	end
 
 	def destroy
-		if @customer.delete
-			flash[:notice] = "Customer deleted"
-			redirect_to customers_path
-		else
-			flash[:notice] = @customer.errors.full_messages
-			redirect_to customer_path(@customer)
-		end
-	end
+    @customer.update(about: 'inactive')
+    render json: { message: 'customer remains in Database, with status set to inactive' }
+  end
 	
 		private
 		def set_customer
@@ -59,9 +42,6 @@ class Api::CustomersController < ApplicationController
 		end
 
 		def customer_params
-
-binding.pry
-
 			params.require(:customer).permit(
 				:firstname, :lastname, :address, :city, :state, 
 				:zip, :email, :phone1, :phone2, :phone3, :pno_brand, 

@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20180214190217) do
   create_table "customers", force: :cascade do |t|
     t.text "firstname"
     t.text "lastname"
+    t.text "fullname", default: "asdf"
     t.text "address"
     t.text "city"
     t.text "state"

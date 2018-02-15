@@ -2,8 +2,14 @@ class Customer < ApplicationRecord
 	has_many :appts
 	has_many :services, through: :appts
 
+	# validates :fullname, uniqueness: true
+
 	require 'csv'
 	
+	def fullname
+		"#{self.firstname}" + ' ' + "#{self.lastname}"
+	end
+
 	def self.import_data
     csv_text = File.read(Rails.root.join('db', 'data', 'testdata1.csv'))
     csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
@@ -17,6 +23,7 @@ class Customer < ApplicationRecord
 				i += 1
 			end
 			newCustomer = Customer.new(customer)
+			newCustomer.fullname = newCustomer.fullname
 			newCustomer.save
 		end
 	end
