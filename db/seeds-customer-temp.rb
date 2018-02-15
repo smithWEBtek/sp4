@@ -1,7 +1,7 @@
 
 DATA_customers = {
   :customer_keys =>
-	["firstname", "lastname", "address", "city", "state", "zip", "email", "phone1", "phone2", "brand", "model", "serial", "finish", "about", "last_service", "last_reminder"]
+	["group", "firstname", "lastname", "address", "city", "state", "zip", "email", "phone1", "pno_brand", "pno_model", "pno_serial", "pno_type", "about", "last_meeting", "last_reminder", "last_note"]
   :customers => ][
 		["Michael", "Close", "29 Wright Road", "Hollis", "NH", "03049"],
 		["Anne", "Emerson", "76 Cambridge Road", "Bedford", "NH", "03110"],

@@ -10,12 +10,13 @@ class CreateCustomers < ActiveRecord::Migration[5.1]
 			t.text			"email"
 			t.text			"phone1"
 			t.text			"phone2"
-			t.text			"brand"
-			t.text			"model"
-			t.text			"serial"
-			t.text			"finish"
+			t.text			"phone3"
+			t.text			"pno_brand"
+			t.text			"pno_model"
+			t.text			"pno_serial"
+			t.text			"pno_type"
 			t.text			"about"
-			t.date			"last_service"
+			t.date			"last_meeting"
 			t.date			"last_reminder"
       t.timestamps
     end
