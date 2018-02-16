@@ -14,10 +14,11 @@ class Customers extends Component {
 	render() {
 		let customersList = <h3>Loading customers ... </h3>
 		if (this.props.customers) {
-			customersList = this.props.customers.map(customer => {
-
+			customersList = this.props.customers.map((customer, index) => {
 				return (
-					<Customer customer={customer} />
+					<div key={index}>
+						<Customer customer={customer} />
+					</div>
 				)
 			})
 		}
