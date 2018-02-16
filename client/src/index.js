@@ -5,13 +5,13 @@ import { Provider } from 'react-redux'
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
 
-import CustomerReducer from './store/reducers/CustomerReducer'
+import customerReducer from './store/reducers/customerReducer'
 import App from './App'
 // import classes from './index.css'
 
 
 const rootReducer = combineReducers({
-	cst: CustomerReducer
+	cst: customerReducer
 })
 
 const logger = store => {

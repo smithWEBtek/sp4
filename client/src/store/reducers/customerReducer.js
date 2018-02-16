@@ -7,7 +7,7 @@ const initialState = {
 	message: ''
 };
 
-const CustomerReducer = (state = initialState, action) => {
+const reducer = (state = initialState, action) => {
 	switch (action.type) {
 
 		//-----CREATE CUSTOMER-----------------------------
@@ -97,4 +97,4 @@ const CustomerReducer = (state = initialState, action) => {
 	}
 }
 
-export default CustomerReducer;
+export default reducer;
