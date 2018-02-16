@@ -1,5 +1,4 @@
-const API_URL = process.env.API_URL || "https://swt-sp4.herokuapp.com/"
-// const API_URL = 'http://127.0.0.1:3001/api'
+const API_URL = 'http://127.0.0.1:3001/api' || "https://swt-sp4.herokuapp.com/api"
 
 const CustomerService = {
 	createCustomer(customer) {
