@@ -1,7 +1,7 @@
 // const API_URL = process.env.API_URL || "https://music-studio.herokuapp.com/swt-sp4"
 const API_URL = 'http://127.0.0.1:3001/api'
 
-const customerService = {
+const CustomerService = {
 	createCustomer(customer) {
 		const request = {
 			method: 'POST',
@@ -47,4 +47,4 @@ const customerService = {
 	}
 }
 
-export default customerService;
+export default CustomerService;
