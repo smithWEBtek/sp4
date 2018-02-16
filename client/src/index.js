@@ -4,13 +4,14 @@ import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
-import { reducer } from './store/reducer'
+
+import CustomerReducer from './store/reducers/CustomerReducer'
 import App from './App'
 // import classes from './index.css'
 
 
 const rootReducer = combineReducers({
-	reduxState: reducer
+	cst: CustomerReducer
 })
 
 const logger = store => {
@@ -35,4 +36,4 @@ const app = (
 	</Provider>
 )
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(app, document.getElementById('root'))

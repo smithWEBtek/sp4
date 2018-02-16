@@ -1,49 +1,50 @@
-const API_URL = process.env.REACT_APP_API_URL || "https://music-studio.herokuapp.com/api"
+// const API_URL = process.env.API_URL || "https://music-studio.herokuapp.com/swt-sp4"
+const API_URL = 'http://127.0.0.1:3001/api'
 
-const apiservice = {
-	createStudent(student) {
+const customerService = {
+	createCustomer(customer) {
 		const request = {
 			method: 'POST',
-			body: JSON.stringify({ student: student }),
+			body: JSON.stringify({ customer: customer }),
 			headers: { 'Content-Type': 'application/json' }
 		}
-		return fetch(`${API_URL}/students`, request)
+		return fetch(`${API_URL}/customers`, request)
 			.then(response => response.json())
 			.catch(error => {
-				console.log('[apiservice][createStudent] ERROR: ', error)
+				console.log('[apiservice][createCustomer] ERROR: ', error)
 			})
 	},
-	fetchStudents() {
-		return fetch(`${API_URL}/students`)
+	fetchCustomers() {
+		return fetch(`${API_URL}/customers`)
 			.then(response => response.json())
 			.catch(error => {
-				console.log('[apiservice][fetchStudents] ERROR: ', error)
+				console.log('[apiservice][fetchCustomers] ERROR: ', error)
 			})
 	},
-	updateStudent(data) {
+	updateCustomer(data) {
 		const request = {
 			method: 'PATCH',
-			body: JSON.stringify({ student: data }),
+			body: JSON.stringify({ customer: data }),
 			headers: { 'Content-Type': 'application/json' }
 		}
-		return fetch(`${API_URL}/students/${data.id}`, request)
+		return fetch(`${API_URL}/customers/${data.id}`, request)
 			.then(response => response.json())
 			.catch(error => {
-				console.log('[apiservice][updateStudent] ERROR: ', error)
+				console.log('[apiservice][updateCustomer] ERROR: ', error)
 			})
 	},
-	deleteStudent(id) {
+	deleteCustomer(id) {
 		const request = {
 			method: 'DELETE',
 			body: JSON.stringify({ id: id }),
 			headers: { 'Content-Type': 'application/json' }
 		}
-		return fetch(`${API_URL}/students/${id}`, request)
+		return fetch(`${API_URL}/customers/${id}`, request)
 			.then(response => response.json())
 			.catch(error => {
-				console.log('[apiservice][deleteStudent] ERROR: ', error)
+				console.log('[apiservice][deleteCustomer] ERROR: ', error)
 			})
 	}
 }
 
-export default apiservice;
+export default customerService;
