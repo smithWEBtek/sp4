@@ -11,7 +11,7 @@ class Customer < ApplicationRecord
 	end
 
 	def self.import_data
-    csv_text = File.read(Rails.root.join('db', 'data', 'testdata1.csv'))
+		csv_text = File.read(Rails.root.join('db', 'data', 'testdata1.csv'))
     csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
 		csv.each_with_object({}) do |row|
 			customer = {}
@@ -24,6 +24,7 @@ class Customer < ApplicationRecord
 			end
 			newCustomer = Customer.new(customer)
 			newCustomer.fullname = newCustomer.fullname
+			newCustomer.zip = '0' + "#{newCustomer.zip}"
 			newCustomer.save
 		end
 	end
