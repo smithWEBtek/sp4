@@ -7,7 +7,7 @@ const initialState = {
 	message: ''
 };
 
-const reducer = (state = initialState, action) => {
+const CustomerReducer = (state = initialState, action) => {
 	switch (action.type) {
 
 		//-----CREATE CUSTOMER-----------------------------
@@ -67,17 +67,7 @@ const reducer = (state = initialState, action) => {
 			})
 
 		case actionTypes.UPDATE_CUSTOMER:
-			//const customerData = action.updatedCustomerData
-			//debugger
-			//const customerIndex = state.customers.findIndex(customer => customer.id === customerData.id);
-			// const stateTemp = {
-			//   ...state,
-			//   customers: [
-			//     ...state.customers.slice(0, customerIndex),
-			//     ...state.customers.slice(customerIndex + 1, state.customers.length)
-			//   ]
-			// };
-			const updatedCustomersArray = state.customers.map(customer => customer.id == action.updatedCustomerData.id ? action.updatedCustomerData : customer)
+			const updatedCustomersArray = state.customers.map(customer => customer.id === action.updatedCustomerData.id ? action.updatedCustomerData : customer)
 			return Object.assign({}, state, { customers: updatedCustomersArray })
 
 
@@ -107,4 +97,4 @@ const reducer = (state = initialState, action) => {
 	}
 }
 
-export default reducer;
+export default CustomerReducer;
