@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
-	root 'api/static#index'  
- 
-
-	get '/api/customers/new', to: 'api/customers#new'
+	root 'api/static#index'
 
 	namespace :api do
   	resources :services
