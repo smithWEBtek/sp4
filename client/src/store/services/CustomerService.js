@@ -1,5 +1,5 @@
-const API_URL = 'http://127.0.0.1:3001/api' || 'https://swt-sp4.herokuapp.com/api'
-// const API_URL = 'https://swt-sp4.herokuapp.com/api'
+// const API_URL = 'http://127.0.0.1:3001/api' || 'https://swt-sp4.herokuapp.com/api'
+const API_URL = 'https://swt-sp4.herokuapp.com/api'
 
 const CustomerService = {
 	createCustomer(customer) {
@@ -17,10 +17,10 @@ const CustomerService = {
 	fetchCustomers() {
 		return fetch(`${API_URL}/customers`)
 			.then(response => response.json())
-			.catch(error => {
-				console.log('[apiservice][fetchCustomers] ERROR: ', error)
-			})
-	},
+		// .catch(error => {
+		console.log('[apiservice][fetchCustomers] ERROR: ', error)
+	})
+},
 	updateCustomer(data) {
 		const request = {
 			method: 'PATCH',
@@ -33,18 +33,18 @@ const CustomerService = {
 				console.log('[apiservice][updateCustomer] ERROR: ', error)
 			})
 	},
-	deleteCustomer(id) {
-		const request = {
-			method: 'DELETE',
-			body: JSON.stringify({ id: id }),
-			headers: { 'Content-Type': 'application/json' }
-		}
-		return fetch(`${API_URL}/customers/${id}`, request)
-			.then(response => response.json())
-			.catch(error => {
-				console.log('[apiservice][deleteCustomer] ERROR: ', error)
-			})
+		deleteCustomer(id) {
+	const request = {
+		method: 'DELETE',
+		body: JSON.stringify({ id: id }),
+		headers: { 'Content-Type': 'application/json' }
 	}
+	return fetch(`${API_URL}/customers/${id}`, request)
+		.then(response => response.json())
+		.catch(error => {
+			console.log('[apiservice][deleteCustomer] ERROR: ', error)
+		})
+}
 }
 
 export default CustomerService;

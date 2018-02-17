@@ -2,8 +2,6 @@ class Customer < ApplicationRecord
 	has_many :appts
 	has_many :services, through: :appts
 
-	# validates :fullname, uniqueness: true
-
 	require 'csv'
 	
 	def fullname
