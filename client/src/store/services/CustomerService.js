@@ -17,10 +17,10 @@ const CustomerService = {
 	fetchCustomers() {
 		return fetch(`${API_URL}/customers`)
 			.then(response => response.json())
-		// .catch(error => {
-		console.log('[apiservice][fetchCustomers] ERROR: ', error)
-	})
-},
+			.catch(error => {
+				console.log('[apiservice][fetchCustomers] ERROR: ', error)
+			})
+	},
 	updateCustomer(data) {
 		const request = {
 			method: 'PATCH',
@@ -33,18 +33,18 @@ const CustomerService = {
 				console.log('[apiservice][updateCustomer] ERROR: ', error)
 			})
 	},
-		deleteCustomer(id) {
-	const request = {
-		method: 'DELETE',
-		body: JSON.stringify({ id: id }),
-		headers: { 'Content-Type': 'application/json' }
+	deleteCustomer(id) {
+		const request = {
+			method: 'DELETE',
+			body: JSON.stringify({ id: id }),
+			headers: { 'Content-Type': 'application/json' }
+		}
+		return fetch(`${API_URL}/customers/${id}`, request)
+			.then(response => response.json())
+			.catch(error => {
+				console.log('[apiservice][deleteCustomer] ERROR: ', error)
+			})
 	}
-	return fetch(`${API_URL}/customers/${id}`, request)
-		.then(response => response.json())
-		.catch(error => {
-			console.log('[apiservice][deleteCustomer] ERROR: ', error)
-		})
-}
 }
 
 export default CustomerService;
