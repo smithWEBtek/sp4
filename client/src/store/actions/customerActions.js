@@ -12,6 +12,7 @@ export const createCustomerFail = (error) => {
 	return { type: actionTypes.CREATE_CUSTOMER_FAIL, error: error }
 }
 export const createCustomer = (data, history) => {
+	console.log('[customerActions][createCustomer] data: ', data)
 	return dispatch => {
 		dispatch(createCustomerStart())
 		CustomerService.createCustomer(data)

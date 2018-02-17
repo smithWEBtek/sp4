@@ -9,7 +9,6 @@ import customerReducer from './store/reducers/customerReducer'
 import App from './App'
 // import classes from './index.css'
 
-
 const rootReducer = combineReducers({
 	cst: customerReducer
 })

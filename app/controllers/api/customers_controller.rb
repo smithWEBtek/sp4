@@ -11,6 +11,9 @@ class Api::CustomersController < ApplicationController
 	end
 
 	def create
+
+binding.pry
+
 		@customer = Customer.new(customer_params)
 		@customer.fullname = @customer.fullname
 		if @customer.save
