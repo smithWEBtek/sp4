@@ -138,7 +138,6 @@ class NewCustomer extends Component {
 						name='pno_brand'
 						placeholder='brand'
 						required
-						required
 						onChange={(e) => this.handleOnChange(e)} />
 
 						<select

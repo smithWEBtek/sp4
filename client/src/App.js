@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import Customers from '../src/Customers/Customers'
+import Customers from '../src/Customers/CustomersIndex'
 
 class App extends Component {
 	render() {
