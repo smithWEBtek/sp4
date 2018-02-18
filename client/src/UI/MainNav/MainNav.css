@@ -1,23 +1,26 @@
 .MainNav {
   color: rgb(255, 255, 255);
   background-color: rgb(179, 179, 180);
-  margin-top: 5px;
+	margin-top: 5px;
 }
 
 .logo-home a{
-  font-size: 2em;
+	font-size: 2em;
   color: rgb(90, 110, 146);
+	text-decoration: none;
   user-select: none;
 }
 
 .Center {
-  text-align: center;
+	text-align: center;
+	text-decoration: none;
 }
 
 .Item {
   margin-right: 15px;
   color: white;
-  font-size: large;
+	font-size: large;
+	text-decoration: none;
 }
 
 .Item:hover {
