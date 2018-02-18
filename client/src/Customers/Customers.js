@@ -26,9 +26,7 @@ class Customers extends Component {
 		this.props.onCreateCustomer(data, history)
 	}
 	render() {
-
-		const { history, match } = this.props
-
+		const { match } = this.props
 		let newCustomerForm = <button onClick={this.showNewCustomerForm}>New Customer</button>
 		if (this.state.showNewCustomerForm) {
 			newCustomerForm = <NewCustomer createCustomer={(data) => this.handleCreateCustomer(data)} />
@@ -45,13 +43,13 @@ class Customers extends Component {
 		return (
 			<div>
 				{newCustomerForm}
-				{customersList}
 				<Switch>
-					<Route exact path={`${match.url}/:id`} exact component={Customer} />
 					<Route path={`${match.url}/:id/edit`} exact component={EditCustomer} />
 					<Route path={`${match.url}/new`} exact component={NewCustomer} />
-					<Route path={match.url} exact />
+					<Route exact path={`${match.url}/:id`} exact component={Customer} />
+					{/* <Route path={match.url} exact /> */}
 				</Switch>
+				{customersList}
 			</div >
 		)
 	}

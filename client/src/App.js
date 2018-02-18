@@ -20,7 +20,6 @@ class App extends Component {
 					<Route path="/assets/" component={Assets} />
 					<Route path="/services" component={Services} /> */}
 				</Aux>
-				<Customers />
 			</div>
 		);
 	}

@@ -23,6 +23,9 @@ class MainNav extends Component {
 	render() {
 		return (
 			<Container>
+				<div className="logo-home">
+					<Link to='/'>SmithPiano</Link>
+				</div>
 				<Navbar className="MainNav" light expand="md">
 					<Collapse isOpen={this.state.isOpen} navbar>
 						<Nav navbar>
@@ -32,12 +35,6 @@ class MainNav extends Component {
 							<Link to='/services' className="Item">services</Link>
 						</Nav>
 					</Collapse>
-					<div className="logo-home">
-						<Link to='/'>
-							SmithPiano
-                <img src={Logo} height="60px" className="Logo" alt=" app-logo" />
-						</Link>
-					</div>
 					<NavbarToggler onClick={this.toggle} />
 				</Navbar >
 				<div>
