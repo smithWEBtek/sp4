@@ -21,22 +21,23 @@ class Customers extends Component {
 	}
 
 	handleCreateCustomer = (data) => {
+		console.log('[createCustomer] data', data)
 		const { history } = this.props
 		this.props.onCreateCustomer(data, history)
 	}
 
 	render() {
-		const { match } = this.props
+		const { match, customers } = this.props
 		let newCustomerForm = <button onClick={this.showNewCustomerForm}>New Customer</button>
 		if (this.state.showNewCustomerForm) {
 			newCustomerForm = <NewCustomer createCustomer={(data) => this.handleCreateCustomer(data)} />
 		}
 
 		let customersList = <h3>Loading customers ... </h3>
-		if (this.props.customers) {
+		if (customers) {
 			customersList = (
 				<CustomersList
-					customers={this.props.customers} />
+					customers={customers} />
 			)
 		}
 

@@ -11,13 +11,9 @@ class Api::CustomersController < ApplicationController
 	end
 
 	def create
-
-binding.pry
-
 		@customer = Customer.new(customer_params)
 		@customer.fullname = @customer.fullname
 		if @customer.save
-			flash[:notice] = "Customer created."
 			render json: @customer
 		else
 			render json: { errors: { message: 'customer NOT updated' }}
@@ -27,7 +23,6 @@ binding.pry
 	def update
 		@customer.update(customer_params)
 		if @customer.save
-			flash[:notice] = "Customer updated."
 			redirect_to customer_path(@customer)
 		else
 			render json: { errors: { message: 'customer NOT updated' }}
@@ -47,7 +42,8 @@ binding.pry
 		def customer_params
 			params.require(:customer).permit(
 				:firstname, :lastname, :address, :city, :state, 
-				:zip, :email, :phone1, :phone2, :phone3, :pno_brand, 
+				:zip, :email, :phone1, :phone2, :phone3, :about, :pno_brand, 
 				:pno_model, :pno_serial, :pno_type, :about, :last_service, :last_reminder)
 		end
 end
+

@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 
 class NewCustomer extends Component {
 	state = {
-		pno_types: [],
 		firstname: '',
 		lastname: '',
 		email: '',
@@ -28,6 +27,10 @@ class NewCustomer extends Component {
 			city: '',
 			state: '',
 			zip: '',
+			pno_brand: '',
+			pno_type: '',
+			pno_model: '',
+			pno_serial: '',
 			about: ''
 		})
 	}
@@ -71,8 +74,9 @@ class NewCustomer extends Component {
 				<option value='Spinet upright' id='1' key='1'>Spinet upright</option>,
 				<option value='Console upright' id='2' key='2'>Console upright</option>,
 				<option value='Studio upright' id='3' key='3'>Studio upright</option>,
-				<option value='Baby Grand' id='4' key='4'>Baby Grand</option>,
-				<option value='Grand' id='5' key='5'>Grand</option>
+				<option value='Full size upright' id='4' key='4'>Full size upright</option>,
+				<option value='Baby Grand' id='5' key='5'>Baby Grand</option>,
+				<option value='Grand' id='6' key='6'>Grand</option>
 			]
 		)
 
