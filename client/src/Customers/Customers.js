@@ -47,7 +47,7 @@ class Customers extends Component {
 					<Route path={`${match.url}/:id/edit`} exact component={EditCustomer} />
 					<Route path={`${match.url}/new`} exact component={NewCustomer} />
 					<Route exact path={`${match.url}/:id`} exact component={Customer} />
-					{/* <Route path={match.url} exact /> */}
+					<Route path={match.url} exact />
 				</Switch>
 				{customersList}
 			</div >
