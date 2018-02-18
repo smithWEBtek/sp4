@@ -54,7 +54,8 @@ has_many :services
 class CreateAppts < ActiveRecord::Migration[5.1]
   def change
     create_table :appts do |t|
-			t.integer		"customer_id"
+			t.integer	  "customer_id"
+			t.integer	  "service_id"
 			t.date			"appt_date"
 			t.datetime	"appt_start"
 			t.datetime	"appt_end"
@@ -81,10 +82,10 @@ class CreateCustomers < ActiveRecord::Migration[5.1]
 			t.text			"email"
 			t.text			"phone1"
 			t.text			"phone2"
-			t.text			"brand"
-			t.text			"model"
-			t.text			"serial"
-			t.text			"finish"
+			t.text			"pno_brand"
+			t.text			"pno_model"
+			t.text			"pno_serial"
+			t.text			"pno_type
 			t.text			"about"
 			t.date			"last_service"
 			t.date			"last_reminder"
@@ -108,3 +109,7 @@ class CreateServices < ActiveRecord::Migration[5.1]
   end
 end
 
+get NewAppt working with cancel and save
+test routing on Heroku
+add service to appt
+clean up data source from SQL Server

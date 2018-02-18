@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Label, Input, Table } from 'reactstrap'
 import * as actions from '../store/actions/index'
 // import ServicesList from '../Services/ServicesList'
 
@@ -27,7 +28,7 @@ class NewAppt extends Component {
 	}
 
 	componentDidMount() {
-		// this.onFetchServices()
+		this.props.onFetchServices()
 		this.clearState()
 	}
 
@@ -60,6 +61,7 @@ class NewAppt extends Component {
 	}
 
 	render() {
+
 		const select_customer = this.props.customers.map(customer => {
 			return <option value={customer.lastname} id={customer.id} key={customer.id}>{customer.lastname}</option>
 		})
@@ -101,17 +103,43 @@ class NewAppt extends Component {
 							placeholder="start"
 							required />
 					</p>
+
+					<div>
+						<Table striped size="sm" className="ServicesList">
+							<thead>
+								<tr>
+									<th>Title</th>
+									<th>Description</th>
+									<th>Cost</th>
+									<th>Duration</th>
+								</tr>
+							</thead>
+							<tbody>
+								{this.props.services.map((service, index) => {
+									console.log(service)
+									return (
+										<tr key={index}>
+											<td>{service.title}</td>
+											<td>{service.description}</td>
+											<td>{service.cost}</td>
+											<td>{service.duration}</td>
+											<td><button type='button' onClick={(id) => this.addService(id)}>Add Service</button></td>
+										</tr>
+									)
+								})
+								}
+							</tbody>
+						</Table>
+					</div>
+
 					<p><label>Note(optional)</label>
 						<input
-							type="time"
+							type="textarea"
 							value={this.state.appt_note}
 							onChange={(event) => this.setState({ appt_note: event.target.value })}
 							placeholder="Note(optional)"
 							required />
 					</p>
-					<label>Choose services:</label>
-					{/* <ServicesList addService={(id) => this.addService(id)} /> */}
-
 					<button>Schedule Appointment</button>
 				</form>
 			</div>

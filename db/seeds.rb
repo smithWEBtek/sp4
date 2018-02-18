@@ -52,12 +52,13 @@ DATA_services = {
   :service_keys =>
 	["title", "description", "cost", "duration"],
   :services => [
-  ['tuning', 'one tuning at current pitch', '135','1.5'],
-  ['tuning-pitch-raise', 'one tuning to raise pitch', '35','0.5'],
-  ['cleaning', 'vacuum reachable areas', '20','0.2'],
-  ['regulation-vertical', '7 step rough regulation', '150','3.0'],
-  ['inspection-verbal', 'inspection - verbal report', '75','.75'],
-  ['inspection-written', 'inspection - written report', '150', '2.0']
+  ['tuning', 'one tuning at current pitch', '135','90'],
+  ['pitch raise', 'one tuning to raise pitch', '35','30'],
+  ['cleaning', 'vacuum reachable areas', '20','20'],
+  ['regulation vertical', '7 step rough regulation', '150','120'],
+  ['regulation grand', '7 step rough regulation', '300','240'],
+  ['inspection verbal', 'inspection - verbal report', '75','45'],
+  ['inspection-written', 'inspection - written report', '150', '120']
   ]
 }
 
@@ -73,38 +74,38 @@ end
 
 DATA_appts = {
   :appt_keys =>
-	["customer_id", "service_id", "appt_date", "appt_start", "appt_end", "appt_note"],
+	["customer_id", "appt_date", "appt_start", "appt_end", "appt_note"],
   :appts => [
-  [1, 1, '2018-02-02', '08:00AM', '12:00PM', 'tuning and maintenance'],
-  [2, 1, '2018-02-01', '10:00AM', '12:00PM', 'tuning and maintenance'],
-  [3, 1, '2018-02-03', '08:00AM', '12:00PM', 'tuning and maintenance'],
-  [4, 1, '2018-02-04', '10:00AM', '12:00PM', 'tuning and maintenance'],
-  [5, 1, '2018-02-05', '08:00AM', '12:00PM', 'tuning and maintenance'],
-  [6, 1, '2018-02-05', '10:00AM', '12:00PM', 'tuning and maintenance'],
-  [7, 1, '2018-02-06', '08:00AM', '12:00PM', 'tuning and maintenance'],
-  [8, 1, '2018-02-07', '10:00AM', '12:00PM', 'tuning and maintenance'],
-	[9, 1, '2018-02-07', '02:00PM', '04:00PM', 'tuning and maintenance'],
-	[10, 1, '2018-02-02', '08:00AM', '12:00PM', 'tuning and maintenance'],
-	[11, 1, '2018-02-02', '08:00AM', '12:00PM', 'tuning and maintenance'],
-  [12, 1, '2018-03-01', '10:00AM', '12:00PM', 'tuning and maintenance'],
-  [13, 1, '2018-03-03', '08:00AM', '12:00PM', 'tuning and maintenance'],
-  [14, 1, '2018-04-04', '10:00AM', '12:00PM', 'tuning and maintenance'],
-  [15, 1, '2018-05-05', '08:00AM', '12:00PM', 'tuning and maintenance'],
-  [16, 1, '2018-06-05', '10:00AM', '12:00PM', 'tuning and maintenance'],
-  [17, 1, '2018-07-06', '08:00AM', '12:00PM', 'tuning and maintenance'],
-  [18, 1, '2018-08-07', '10:00AM', '12:00PM', 'tuning and maintenance'],
-  [19, 1, '2018-09-07', '02:00PM', '04:00PM', 'tuning and maintenance'],
-  [20, 1, '2018-10-07', '02:00PM', '04:00PM', 'tuning and maintenance'],
-  [21, 1, '2018-11-07', '02:00PM', '04:00PM', 'tuning and maintenance'],
-  [22, 1, '2018-12-07', '02:00PM', '04:00PM', 'tuning and maintenance'],
-  [23, 1, '2018-02-07', '02:00PM', '04:00PM', 'tuning and maintenance'],
-  [24, 1, '2018-02-08', '02:00PM', '04:00PM', 'tuning and maintenance'],
-  [25, 1, '2018-02-09', '02:00PM', '04:00PM', 'tuning and maintenance'],
-  [26, 1, '2018-02-12', '02:00PM', '04:00PM', 'tuning and maintenance'],
-  [27, 1, '2018-02-15', '02:00PM', '04:00PM', 'tuning and maintenance'],
-  [28, 1, '2018-02-25', '02:00PM', '04:00PM', 'tuning and maintenance'],
-  [29, 1, '2018-02-26', '02:00PM', '04:00PM', 'tuning and maintenance'],
-	[30, 1, '2018-02-26', '02:00PM', '04:00PM', 'tuning and maintenance']
+  [1, '2018-02-02', '08:00AM', '12:00PM', 'tuning and maintenance'],
+  [2, '2018-02-01', '10:00AM', '12:00PM', 'tuning and maintenance'],
+  [3, '2018-02-03', '08:00AM', '12:00PM', 'tuning and maintenance'],
+  [4, '2018-02-04', '10:00AM', '12:00PM', 'tuning and maintenance'],
+  [5, '2018-02-05', '08:00AM', '12:00PM', 'tuning and maintenance'],
+  [6, '2018-02-05', '10:00AM', '12:00PM', 'tuning and maintenance'],
+  [7, '2018-02-06', '08:00AM', '12:00PM', 'tuning and maintenance'],
+  [8, '2018-02-07', '10:00AM', '12:00PM', 'tuning and maintenance'],
+	[9, '2018-02-07', '02:00PM', '04:00PM', 'tuning and maintenance'],
+	[10, '2018-02-02', '08:00AM', '12:00PM', 'tuning and maintenance'],
+	[11, '2018-02-02', '08:00AM', '12:00PM', 'tuning and maintenance'],
+  [12, '2018-03-01', '10:00AM', '12:00PM', 'tuning and maintenance'],
+  [13, '2018-03-03', '08:00AM', '12:00PM', 'tuning and maintenance'],
+  [14, '2018-04-04', '10:00AM', '12:00PM', 'tuning and maintenance'],
+  [15, '2018-05-05', '08:00AM', '12:00PM', 'tuning and maintenance'],
+  [16, '2018-06-05', '10:00AM', '12:00PM', 'tuning and maintenance'],
+  [17, '2018-07-06', '08:00AM', '12:00PM', 'tuning and maintenance'],
+  [18, '2018-08-07', '10:00AM', '12:00PM', 'tuning and maintenance'],
+  [19, '2018-09-07', '02:00PM', '04:00PM', 'tuning and maintenance'],
+  [20, '2018-10-07', '02:00PM', '04:00PM', 'tuning and maintenance'],
+  [21, '2018-11-07', '02:00PM', '04:00PM', 'tuning and maintenance'],
+  [22, '2018-12-07', '02:00PM', '04:00PM', 'tuning and maintenance'],
+  [23, '2018-02-07', '02:00PM', '04:00PM', 'tuning and maintenance'],
+  [24, '2018-02-08', '02:00PM', '04:00PM', 'tuning and maintenance'],
+  [25, '2018-02-09', '02:00PM', '04:00PM', 'tuning and maintenance'],
+  [26, '2018-02-12', '02:00PM', '04:00PM', 'tuning and maintenance'],
+  [27, '2018-02-15', '02:00PM', '04:00PM', 'tuning and maintenance'],
+  [28, '2018-02-25', '02:00PM', '04:00PM', 'tuning and maintenance'],
+  [29, '2018-02-26', '02:00PM', '04:00PM', 'tuning and maintenance'],
+	[30, '2018-02-26', '02:00PM', '04:00PM', 'tuning and maintenance']
   ]
 }
 
@@ -118,6 +119,53 @@ def make_appts
   end
 end
 
+DATA_appt_services = {
+  :appt_service_keys =>
+	["appt_id", "service_id"],
+  :appt_services => [
+  [1, 1],
+  [2, 1],
+  [3, 2],
+  [4, 3],
+  [5, 1],
+  [6, 1],
+  [7, 4],
+  [8, 1],
+	[9, 1],
+	[10, 1],
+	[11, 3],
+  [12, 1],
+  [13, 1],
+  [14, 1],
+  [15, 1],
+  [16, 4],
+  [17, 1],
+  [18, 1],
+  [19, 1],
+  [20, 1],
+  [21, 5],
+  [22, 1],
+  [23, 1],
+  [24, 1],
+  [25, 1],
+  [26, 2],
+  [27, 3],
+  [28, 1],
+  [29, 4],
+	[30, 1]
+  ]
+}
+
+def make_appt_services
+  DATA_appt_services[:appt_services].each do |appt_service|
+    new_appt_service = ApptService.new
+    appt_service.each_with_index do |attribute, i|
+      new_appt_service.send(DATA_appt_services[:appt_service_keys][i]+"=", attribute)
+    end
+    new_appt_service.save
+  end
+end
+
 def load_customers
 	Customer.import_data
 end
@@ -127,6 +175,7 @@ def main
 	make_services
 	load_customers
 	make_appts
+	make_appt_services
 end
 
 main

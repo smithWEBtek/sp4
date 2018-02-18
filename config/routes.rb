@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :appt_services
 	root 'api/static#index'
 
 	namespace :api do

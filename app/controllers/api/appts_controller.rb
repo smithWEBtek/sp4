@@ -10,9 +10,6 @@ class Api::ApptsController < ApplicationController
 	end
 
 	def create
-
-binding.pry
-
 		@appt = Appt.new(appt_params)
 		if @appt.save
 			flash[:notice] = "Appt created."
@@ -43,6 +40,6 @@ binding.pry
 		end
 
 		def appt_params
-			params.require(:appt).permit(:customer_id, :service_id, :appt_date, :appt_start, :appt_end, :appt_note)
+			params.require(:appt).permit(:customer_id, :appt_date, :appt_start, :appt_end, :appt_note)
 		end
 end

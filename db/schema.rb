@@ -10,14 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180214190217) do
+ActiveRecord::Schema.define(version: 20180218184508) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "appt_services", force: :cascade do |t|
+    t.integer "appt_id"
+    t.integer "service_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "appts", force: :cascade do |t|
     t.integer "customer_id"
-    t.integer "service_id", default: 1
     t.date "appt_date"
     t.datetime "appt_start"
     t.datetime "appt_end"
@@ -59,7 +65,7 @@ ActiveRecord::Schema.define(version: 20180214190217) do
   end
 
   create_table "services", force: :cascade do |t|
-    t.integer "title"
+    t.text "title"
     t.text "description"
     t.integer "cost"
     t.integer "duration"

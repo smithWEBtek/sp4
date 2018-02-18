@@ -4,14 +4,15 @@ import { Table } from 'reactstrap'
 import * as actions from '../store/actions/index'
 
 class ServicesList extends Component {
+	state = {
+		customer_id: '',
+		service_id: ''
+	}
 
 	componentDidMount() {
-		this.onFetchServices()
+		this.props.onFetchServices()
 	}
 
-	handleSubmit = (id) => {
-		this.onCreateService(id)
-	}
 
 	render() {
 		let renderServices = this.props.services.map((service, index) => {
@@ -21,7 +22,6 @@ class ServicesList extends Component {
 					<td>{service.description}</td>
 					<td>{service.cost}</td>
 					<td>{service.duration}</td>
-					<td><button onClick={(id) => this.handleSubmit(id)} >Add Service</button></td>
 				</tr>
 			)
 		})
@@ -35,7 +35,6 @@ class ServicesList extends Component {
 							<th>Description</th>
 							<th>Cost</th>
 							<th>Duration</th>
-							<th>Add to appt</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -55,7 +54,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
 	return {
-		onCreateService: (id) => dispatch(actions.createService(id))
+		onCreateService: (id) => dispatch(actions.createService(id)),
+		onFetchServices: (id) => dispatch(actions.fetchServices(id))
 	}
 }
 
