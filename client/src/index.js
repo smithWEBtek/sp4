@@ -6,11 +6,17 @@ import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
 
 import customerReducer from './store/reducers/customerReducer'
+import serviceReducer from './store/reducers/serviceReducer'
+import apptReducer from './store/reducers/apptReducer'
+import assetReducer from './store/reducers/assetReducer'
 import App from './App'
-// import classes from './index.css'
+
 
 const rootReducer = combineReducers({
-	cst: customerReducer
+	cst: customerReducer,
+	svc: serviceReducer,
+	apt: apptReducer,
+	ast: assetReducer
 })
 
 const logger = store => {

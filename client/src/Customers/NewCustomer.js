@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import * as actions from '../store/actions/index'
 
 class NewCustomer extends Component {
 	state = {
@@ -60,7 +62,8 @@ class NewCustomer extends Component {
 
 	handleSubmit = () => {
 		const data = this.state
-		this.props.createCustomer(data)
+		const { history } = this.props
+		this.props.onCreateCustomer(data, history)
 		this.clearState()
 	}
 
@@ -183,4 +186,10 @@ class NewCustomer extends Component {
 	}
 }
 
-export default NewCustomer
+const mapDispatchToProps = dispatch => {
+	return {
+		onCreateCustomer: (data, history) => dispatch(actions.createCustomer(data, history))
+	}
+}
+
+export default connect(null, mapDispatchToProps)(NewCustomer)

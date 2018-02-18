@@ -1,37 +1,25 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import * as actions from '../store/actions/index'
-import { Route, Switch, withRouter } from 'react-router'
+import { Route, Switch, Link, withRouter } from 'react-router-dom'
 import CustomersList from './CustomersList'
 import Customer from './Customer'
 import EditCustomer from './EditCustomer'
 import NewCustomer from './NewCustomer'
+import NewAppt from '../Appts/NewAppt'
+
 
 class Customers extends Component {
-	state = {
-		showNewCustomerForm: false
-	}
 
 	componentDidMount() {
 		this.props.onFetchCustomers()
 	}
 
-	showNewCustomerForm = () => {
-		this.setState({ showNewCustomerForm: true })
-	}
-
-	handleCreateCustomer = (data) => {
-		console.log('[createCustomer] data', data)
-		const { history } = this.props
-		this.props.onCreateCustomer(data, history)
-	}
-
 	render() {
 		const { match, customers } = this.props
-		let newCustomerForm = <button onClick={this.showNewCustomerForm}>New Customer</button>
-		if (this.state.showNewCustomerForm) {
-			newCustomerForm = <NewCustomer createCustomer={(data) => this.handleCreateCustomer(data)} />
-		}
+
+		let newApptForm = <button><Link to={`/appts/new`}>New Appointment</Link></button>
+		let newCustomerForm = <button><Link to={`/customers/new`}>New Customer</Link></button>
 
 		let customersList = <h3>Loading customers ... </h3>
 		if (customers) {
@@ -44,11 +32,13 @@ class Customers extends Component {
 		return (
 			<div>
 				{newCustomerForm}
+				{newApptForm}
 				<Switch>
 					<Route exact path={`${match.url}/:id/edit`} component={EditCustomer} />
 					<Route exact path={`${match.url}/new`} component={NewCustomer} />
 					<Route exact path={`${match.url}/:id`} component={Customer} />
 					<Route exact path={match.url} />
+					<Route exact path={`/appts/new`} component={NewAppt} />
 				</Switch>
 				{customersList}
 			</div >
@@ -64,8 +54,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
 	return {
-		onFetchCustomers: () => dispatch(actions.fetchCustomers()),
-		onCreateCustomer: (data, history) => dispatch(actions.createCustomer(data, history))
+		onFetchCustomers: () => dispatch(actions.fetchCustomers())
 	}
 }
 
