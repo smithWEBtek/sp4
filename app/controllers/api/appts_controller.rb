@@ -12,7 +12,6 @@ class Api::ApptsController < ApplicationController
 	def create
 		@appt = Appt.new(appt_params)
 		if @appt.save
-			flash[:notice] = "Appt created."
 			render json: @appt
 		else
 			render json: { errors: { message: 'appt NOT updated' }}
@@ -22,7 +21,6 @@ class Api::ApptsController < ApplicationController
 	def update
 		@appt.update(appt_params)
 		if @appt.save
-			flash[:notice] = "Appt updated."
 			redirect_to appt_path(@appt)
 		else
 			render json: { errors: { message: 'appt NOT updated' }}

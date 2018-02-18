@@ -12,7 +12,6 @@ class Api::AssetsController < ApplicationController
 	def create
 		@asset = Asset.new(asset_params)
 		if @asset.save
-			flash[:notice] = "Asset created."
 			render json: @asset
 		else
 			render json: { errors: { message: 'asset NOT updated' }}
@@ -22,7 +21,6 @@ class Api::AssetsController < ApplicationController
 	def update
 		@asset.update(asset_params)
 		if @asset.save
-			flash[:notice] = "Asset updated."
 			redirect_to asset_path(@asset)
 		else
 			render json: { errors: { message: 'asset NOT updated' }}

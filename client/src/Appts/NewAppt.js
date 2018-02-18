@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Label, Input, Table } from 'reactstrap'
+import { Table } from 'reactstrap'
 import * as actions from '../store/actions/index'
-// import ServicesList from '../Services/ServicesList'
 
 class NewAppt extends Component {
 	state = {
@@ -53,8 +52,8 @@ class NewAppt extends Component {
 			appt_date: this.state.appt_date,
 			appt_start: this.state.appt_start,
 			appt_end: this.state.appt_end,
-			appt_note: this.state.appt_note,
-			service_id: this.state.service_id
+			appt_note: this.state.appt_note
+			// service_id: this.state.service_id
 		}
 		this.props.onCreateAppt(newApptData, history)
 		this.clearState()
@@ -137,8 +136,7 @@ class NewAppt extends Component {
 							type="textarea"
 							value={this.state.appt_note}
 							onChange={(event) => this.setState({ appt_note: event.target.value })}
-							placeholder="Note(optional)"
-							required />
+							placeholder="Note" />
 					</p>
 					<button>Schedule Appointment</button>
 				</form>

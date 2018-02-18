@@ -29,18 +29,21 @@ class MainNav extends Component {
 				<Navbar className="MainNav" light expand="md">
 					<Collapse isOpen={this.state.isOpen} navbar>
 						<Nav navbar>
+							<Link to='/customers/new' className="Item">newCust</Link>
+							<Link to='/appts/new' className="Item">newAppt</Link>
 							<Link to='/customers' className="Item">customers</Link>
 							<Link to='/assets' className="Item">assets</Link>
 							<Link to='/appts' className="Item">appts</Link>
-							<Link to='/services' className="Item">services</Link>
+							<Link to='/services' className="Item">svcs</Link>
 						</Nav>
 					</Collapse>
-					{/* <NavbarToggler onClick={this.toggle} /> */}
 				</Navbar >
 				<div>
 					<Route path="/" exact render={() => (
 						<div>
 							<div className="Center">
+								<div>
+								</div>
 								<br />
 								<h5>Smith Piano Services</h5>
 								<h5>Tuning, Teaching, Performing</h5>

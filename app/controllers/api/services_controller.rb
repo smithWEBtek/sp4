@@ -12,7 +12,6 @@ class Api::ServicesController < ApplicationController
 	def create
 		@service = Service.new(service_params)
 		if @service.save
-			flash[:notice] = "Service created."
 			render json: @service
 		else
 			render json: { errors: { message: 'service NOT updated' }}
@@ -22,7 +21,6 @@ class Api::ServicesController < ApplicationController
 	def update
 		@service.update(service_params)
 		if @service.save
-			flash[:notice] = "Service updated."
 			redirect_to service_path(@service)
 		else
 			render json: { errors: { message: 'service NOT updated' }}
