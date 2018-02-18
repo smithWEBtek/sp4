@@ -1,9 +1,9 @@
 import React from 'react'
 import CustomerRow from './CustomerRow'
 import { Table } from 'reactstrap'
-// import './CustomersTable.css'
+// import './CustomersList.css'
 
-const CustomersTable = (props) => {
+const CustomersList = (props) => {
 
 	let sortedCustomers = props.customers.sort((a, b) => a.lastname.toLowerCase() < b.lastname.toLowerCase() ? -1 : a.lastname.toLowerCase() > b.lastname.toLowerCase() ? 1 : 0)
 	let renderCustomers = sortedCustomers.map((customer, index) => {
@@ -17,7 +17,7 @@ const CustomersTable = (props) => {
 
 	return (
 		<div>
-			<Table striped size="sm" className="CustomersTable">
+			<Table striped size="sm" className="CustomersList">
 				<thead>
 					<tr>
 						<th>ID</th>
@@ -33,4 +33,4 @@ const CustomersTable = (props) => {
 	)
 }
 
-export default CustomersTable
+export default CustomersList

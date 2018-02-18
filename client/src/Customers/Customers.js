@@ -2,11 +2,12 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import * as actions from '../store/actions/index'
 import { Route, Switch, withRouter } from 'react-router'
-import CustomersTable from './CustomersTable'
-import CustomerShow from './CustomerShow'
+import CustomersList from './CustomersList'
+import Customer from './Customer'
+import EditCustomer from './EditCustomer'
 import NewCustomer from './NewCustomer'
 
-class CustomersIndex extends Component {
+class Customers extends Component {
 	state = {
 		showNewCustomerForm: false
 	}
@@ -36,20 +37,21 @@ class CustomersIndex extends Component {
 		let customersList = <h3>Loading customers ... </h3>
 		if (this.props.customers) {
 			customersList = (
-				<CustomersTable
+				<CustomersList
 					customers={this.props.customers} />
 			)
 		}
 
 		return (
 			<div>
-				<Switch>
-					<Route exact path="/customers/:id" component={CustomerShow} />
-					<Route exact path="/customers" component={CustomersIndex} />
-					{/* <Route exact path="/" component={CustomersIndex} /> */}
-				</Switch>
 				{newCustomerForm}
 				{customersList}
+				<Switch>
+					<Route exact path={`${match.url}/:id`} exact component={Customer} />
+					<Route path={`${match.url}/:id/edit`} exact component={EditCustomer} />
+					<Route path={`${match.url}/new`} exact component={NewCustomer} />
+					<Route path={match.url} exact />
+				</Switch>
 			</div >
 		)
 	}
@@ -68,4 +70,4 @@ const mapDispatchToProps = dispatch => {
 	}
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(CustomersIndex)) 
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Customers)) 
