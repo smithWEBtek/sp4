@@ -21,10 +21,10 @@ class Customers extends Component {
 	}
 
 	handleCreateCustomer = (data) => {
-		console.log('[data]', data)
 		const { history } = this.props
 		this.props.onCreateCustomer(data, history)
 	}
+
 	render() {
 		const { match } = this.props
 		let newCustomerForm = <button onClick={this.showNewCustomerForm}>New Customer</button>
@@ -44,10 +44,10 @@ class Customers extends Component {
 			<div>
 				{newCustomerForm}
 				<Switch>
-					<Route path={`${match.url}/:id/edit`} exact component={EditCustomer} />
-					<Route path={`${match.url}/new`} exact component={NewCustomer} />
-					<Route exact path={`${match.url}/:id`} exact component={Customer} />
-					<Route path={match.url} exact />
+					<Route exact path={`${match.url}/:id/edit`} component={EditCustomer} />
+					<Route exact path={`${match.url}/new`} component={NewCustomer} />
+					<Route exact path={`${match.url}/:id`} component={Customer} />
+					<Route exact path={match.url} />
 				</Switch>
 				{customersList}
 			</div >

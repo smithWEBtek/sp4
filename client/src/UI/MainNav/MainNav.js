@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Route, Link } from 'react-router-dom'
 import './MainNav.css'
 import Logo from '../Logo/Logo.svg'
-import { Container, Collapse, Navbar, NavbarToggler, Nav } from 'reactstrap'
+import { Container, Collapse, Navbar, Nav } from 'reactstrap'
 
 class MainNav extends Component {
 	constructor(props) {
@@ -35,7 +35,7 @@ class MainNav extends Component {
 							<Link to='/services' className="Item">services</Link>
 						</Nav>
 					</Collapse>
-					<NavbarToggler onClick={this.toggle} />
+					{/* <NavbarToggler onClick={this.toggle} /> */}
 				</Navbar >
 				<div>
 					<Route path="/" exact render={() => (
