@@ -43,6 +43,6 @@ binding.pry
 		end
 
 		def appt_params
-			params.require(:appt).permit(:customer_id, :appt_date, :appt_start, :appt_end, :appt_note, :service_id)
+			params.require(:appt).permit(:customer_id, :service_id, :appt_date, :appt_start, :appt_end, :appt_note)
 		end
 end

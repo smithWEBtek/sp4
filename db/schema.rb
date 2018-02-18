@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20180214190217) do
 
   create_table "appts", force: :cascade do |t|
     t.integer "customer_id"
+    t.integer "service_id", default: 1
     t.date "appt_date"
     t.datetime "appt_start"
     t.datetime "appt_end"

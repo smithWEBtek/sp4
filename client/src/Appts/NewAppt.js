@@ -11,7 +11,7 @@ class NewAppt extends Component {
 		appt_start: '',
 		appt_end: '',
 		appt_note: '',
-		services: []
+		service_id: ''
 	}
 
 	clearState() {
@@ -22,7 +22,7 @@ class NewAppt extends Component {
 			appt_start: '',
 			appt_end: '',
 			appt_note: '',
-			services_ids: []
+			service_id: ''
 		})
 	}
 
@@ -33,12 +33,13 @@ class NewAppt extends Component {
 
 	addService = (id) => {
 		this.setState({
-			services_ids: [...this.state.services_ids].concat(id)
+			service_id: id
 		})
 	}
 
 	handleCustomerSelect = (event) => {
 		this.setState({
+			customer_id: this.props.customers.find(customer => customer.lastname === event.target.value).id,
 			customer: this.props.customers.find(customer => customer.lastname === event.target.value)
 		})
 	}
@@ -52,15 +53,15 @@ class NewAppt extends Component {
 			appt_start: this.state.appt_start,
 			appt_end: this.state.appt_end,
 			appt_note: this.state.appt_note,
-			services_ids: this.state.services_ids
+			service_id: this.state.service_id
 		}
 		this.props.onCreateAppt(newApptData, history)
 		this.clearState()
 	}
 
 	render() {
-		const select_customer = this.props.customers.map((customer, index) => {
-			return <option value={customer.lastname} id={index} key={index}>{customer.lastname}</option>
+		const select_customer = this.props.customers.map(customer => {
+			return <option value={customer.lastname} id={customer.id} key={customer.id}>{customer.lastname}</option>
 		})
 
 		return (
@@ -98,6 +99,14 @@ class NewAppt extends Component {
 							value={this.state.appt_end}
 							onChange={(event) => this.setState({ appt_end: event.target.value })}
 							placeholder="start"
+							required />
+					</p>
+					<p><label>Note(optional)</label>
+						<input
+							type="time"
+							value={this.state.appt_note}
+							onChange={(event) => this.setState({ appt_note: event.target.value })}
+							placeholder="Note(optional)"
 							required />
 					</p>
 					<label>Choose services:</label>

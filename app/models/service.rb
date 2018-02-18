@@ -1,3 +1,2 @@
 class Service < ApplicationRecord
-
 end
