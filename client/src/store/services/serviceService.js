@@ -1,7 +1,6 @@
 const API_URL = 'http://127.0.0.1:3001/api' || 'https://swt-sp4.herokuapp.com/api'
 // const API_URL = 'https://swt-sp4.herokuapp.com/api'
 
-
 const ServiceService = {
 	createService(service) {
 		const request = {

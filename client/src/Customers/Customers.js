@@ -15,6 +15,9 @@ class Customers extends Component {
 
 	render() {
 		const { match } = this.props
+
+		console.log('[Customers match]', match);
+
 		let customersList = <h3>Loading customers ... </h3>
 		if (this.props.customers) {
 			customersList = (
@@ -26,13 +29,10 @@ class Customers extends Component {
 		return (
 			<div>
 				<Switch>
-					<Route exact path={`${match.url}/:id/edit`} component={EditCustomer} />
-					<Route exact path={`${match.url}/new`} component={NewCustomer} />
-					{/* <Route exact path={`${match.url}/:id`} component={Customer} /> */}
-					<Route exact path='/customers/:id' component={Customer} />
-					<Route exact path="/customers/new" component={NewCustomer} />
-					<Route exact path={match.url} />
-
+					{/* <Route exact path={`${match.url}/:id/edit`} component={EditCustomer} /> */}
+					{/* <Route exact path={`${match.url}/new`} component={NewCustomer} /> */}
+					<Route exact path={`${match.url}/:id`} component={Customer} />
+					{/* <Route exact path={match.url} /> */}
 				</Switch>
 				{customersList}
 			</div >

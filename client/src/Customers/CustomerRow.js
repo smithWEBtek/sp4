@@ -1,7 +1,8 @@
 import React from 'react'
 // import './CustomerRow.css'
-import { Link, withRouter } from 'react-router-dom'
+import { Route, Link, withRouter } from 'react-router-dom'
 import Aux from '../hoc/Aux'
+import Customer from './Customer'
 
 const CustomerRow = (props) => {
 
@@ -24,6 +25,7 @@ const CustomerRow = (props) => {
 					{props.customer.lastname}
 				</td>
 			</tr>
+			<Route exact path='/customers/:id' component={Customer} />
 		</Aux>
 	)
 }

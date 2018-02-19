@@ -29,6 +29,7 @@ const CustomersList = (props) => {
 					{renderCustomers}
 				</tbody>
 			</Table>
+
 		</div>
 	)
 }
