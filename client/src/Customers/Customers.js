@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import * as actions from '../store/actions/index'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router'
 import CustomersList from './CustomersList'
 import Customer from './Customer'
 import EditCustomer from './EditCustomer'
