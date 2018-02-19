@@ -2,11 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Table } from 'reactstrap'
 import ApptServicesList from './ApptServicesList'
-import NewAppt from './NewAppt'
 
 const Appt = (props) => {
-
-	console.log('[appt props]', props);
 
 	const appt = props.appts.find(apt => apt.id === +props.match.params.id)
 	let apptMain = <div><h5>Appointment is loading...</h5></div>

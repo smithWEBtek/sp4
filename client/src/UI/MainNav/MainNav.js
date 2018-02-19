@@ -29,8 +29,6 @@ class MainNav extends Component {
 				<Navbar className="MainNav" light expand="md">
 					<Collapse isOpen={this.state.isOpen} navbar>
 						<Nav navbar>
-							<Link to='/customers/new' className="Item">newCust</Link>
-							<Link to='/appts/new' className="Item">newAppt</Link>
 							<Link to='/customers' className="Item">customers</Link>
 							<Link to='/assets' className="Item">assets</Link>
 							<Link to='/appts' className="Item">appts</Link>
@@ -53,6 +51,7 @@ class MainNav extends Component {
 						</div>
 					)} />
 				</div>
+
 			</Container >
 		)
 	}

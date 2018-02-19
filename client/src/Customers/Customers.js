@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import * as actions from '../store/actions/index'
-import { Route, Switch, Link, withRouter } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import CustomersList from './CustomersList'
 import Customer from './Customer'
 import EditCustomer from './EditCustomer'
 import NewCustomer from './NewCustomer'
-
 
 class Customers extends Component {
 
@@ -15,12 +14,12 @@ class Customers extends Component {
 	}
 
 	render() {
-		const { match, customers } = this.props
+		const { match } = this.props
 		let customersList = <h3>Loading customers ... </h3>
-		if (customers) {
+		if (this.props.customers) {
 			customersList = (
 				<CustomersList
-					customers={customers} />
+					customers={this.props.customers} />
 			)
 		}
 
@@ -29,7 +28,9 @@ class Customers extends Component {
 				<Switch>
 					<Route exact path={`${match.url}/:id/edit`} component={EditCustomer} />
 					<Route exact path={`${match.url}/new`} component={NewCustomer} />
-					<Route exact path={`${match.url}/:id`} component={Customer} />
+					{/* <Route exact path={`${match.url}/:id`} component={Customer} /> */}
+					<Route exact path='/customers/:id' component={Customer} />
+					<Route exact path="/customers/new" component={NewCustomer} />
 					<Route exact path={match.url} />
 
 				</Switch>
@@ -51,4 +52,4 @@ const mapDispatchToProps = dispatch => {
 	}
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Customers)) 
+export default connect(mapStateToProps, mapDispatchToProps)(Customers) 

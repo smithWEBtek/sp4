@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 const Customer = (props) => {
+
 	const customer = props.customers.find(customer => customer.id === +props.match.params.id)
 	let customerCard = <div><p>Customer component is loading ... </p></div>
 	if (customer) {
@@ -19,6 +20,7 @@ const Customer = (props) => {
 
 	return (
 		<div>
+			<h1>Customer should be here: </h1>
 			{customerCard}
 		</div>
 	)

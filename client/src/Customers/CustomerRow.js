@@ -1,6 +1,6 @@
 import React from 'react'
 // import './CustomerRow.css'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import Aux from '../hoc/Aux'
 
 const CustomerRow = (props) => {
@@ -23,19 +23,9 @@ const CustomerRow = (props) => {
 				<td>
 					{props.customer.lastname}
 				</td>
-
-				<td><button
-					type='button'
-					className="Success">
-					<Link
-						to={`/customers/${props.customer.id}`}
-						key={props.customer.id}
-					>show</Link>
-				</button></td>
-
 			</tr>
 		</Aux>
 	)
 }
 
-export default CustomerRow
+export default withRouter(CustomerRow)
