@@ -47,4 +47,4 @@ const ApptService = {
 	}
 }
 
-export default ApptService;
+export default ApptService
