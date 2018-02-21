@@ -15,9 +15,6 @@ class Customers extends Component {
 
 	render() {
 		const { match } = this.props
-
-		console.log('[Customers match]', match);
-
 		let renderCustomers = <h3>Loading customers ... </h3>
 		if (this.props.customers) {
 			renderCustomers = (

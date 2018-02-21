@@ -1,6 +1,7 @@
 import React from 'react'
 import { Table } from 'reactstrap'
 import { Link } from 'react-router-dom'
+import Aux from '../hoc/Aux'
 
 // import './CustomersList.css'
 
@@ -9,31 +10,33 @@ const CustomersList = (props) => {
 	let sortedCustomers = props.customers.sort((a, b) => a.lastname.toLowerCase() < b.lastname.toLowerCase() ? -1 : a.lastname.toLowerCase() > b.lastname.toLowerCase() ? 1 : 0)
 	let list = sortedCustomers.map((customer, index) => {
 		return (
-			<tr>
-				<th scope="row">{customer.id}</th>
-				<td>
-					<Link
-						to={`/customers/${customer.id}`}
-						style={{ marginRight: '5px' }}
-						key={customer.id}>{customer.lastname}
-					</Link>
-				</td>
-				<td>
-					{customer.firstname}
-				</td>
-				<td>
-					{customer.lastname}
-				</td>
-				<td>
-					{customer.city}
-				</td>
-				<td>
-					{customer.state}
-				</td>
-				<td>
-					{customer.brand}
-				</td>
-			</tr>
+			<Aux key={index}>
+				<tr>
+					<th scope="row">{customer.id}</th>
+					<td>
+						<Link
+							to={`/customers/${customer.id}`}
+							style={{ marginRight: '5px' }}
+							key={customer.id}>{customer.lastname}
+						</Link>
+					</td>
+					<td>
+						{customer.firstname}
+					</td>
+					<td>
+						{customer.lastname}
+					</td>
+					<td>
+						{customer.city}
+					</td>
+					<td>
+						{customer.state}
+					</td>
+					<td>
+						{customer.brand}
+					</td>
+				</tr>
+			</Aux>
 		)
 	})
 
@@ -54,7 +57,6 @@ const CustomersList = (props) => {
 					{list}
 				</tbody>
 			</Table>
-
 		</div>
 	)
 }
