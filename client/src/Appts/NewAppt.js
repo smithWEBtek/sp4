@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Table } from 'reactstrap'
 import * as actions from '../store/actions/index'
+import './Appts.css'
 
 class NewAppt extends Component {
 	state = {
@@ -66,7 +67,7 @@ class NewAppt extends Component {
 		})
 
 		return (
-			<div>
+			<div className="NewAppt">
 				<p>Complete form and click 'Schedule Appointment'</p>
 				<form onSubmit={(event) => this.handleSubmit(event)}>
 					<p>
@@ -115,7 +116,6 @@ class NewAppt extends Component {
 							</thead>
 							<tbody>
 								{this.props.services.map((service, index) => {
-									console.log(service)
 									return (
 										<tr key={index}>
 											<td>{service.title}</td>

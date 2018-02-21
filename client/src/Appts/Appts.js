@@ -31,8 +31,17 @@ class Appts extends Component {
 			)
 		})
 
+		let newAppt = <NewAppt />
+
 		return (
 			<div>
+				<button><Link to='/appts/new'>New Appointment</Link></button>
+				<Switch>
+					{/* <Route path={`${match.url}/:id/edit`} exact component={EditAppt} /> */}
+					<Route path={`${match.url}/new`} exact component={NewAppt} />
+					<Route path={`${match.url}/:id`} exact component={Appt} />
+					<Route path={match.url} exact />
+				</Switch>
 				<Table striped size="sm" className="CustomersList">
 					<thead>
 						<tr>
@@ -49,14 +58,6 @@ class Appts extends Component {
 						{renderAppts}
 					</tbody>
 				</Table>
-				<div>
-					<Switch>
-						{/* <Route path={`${match.url}/:id/edit`} exact component={EditAppt} /> */}
-						<Route path={`${match.url}/new`} exact component={NewAppt} />
-						<Route path={`${match.url}/:id`} exact component={Appt} />
-						<Route path={match.url} exact />
-					</Switch>
-				</div>
 			</div>
 		)
 	}

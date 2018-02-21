@@ -2,22 +2,23 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Table } from 'reactstrap'
 import ApptServicesList from './ApptServicesList'
+import Aux from '../hoc/Aux'
 
 const Appt = (props) => {
 
 	const appt = props.appts.find(apt => apt.id === +props.match.params.id)
-	let apptMain = <div><h5>Appointment is loading...</h5></div>
-	let renderApptServices = <div><h5>No services assigned</h5></div>
+	let apptMain = <tr><td>Appointment is loading...</td></tr>
+	let renderApptServices = <h5>No services assigned</h5>
 
 	if (appt) {
 		apptMain = (
-			<div>
-				<h5>{appt.customer.firstname} {appt.customer.lastname}</h5>
-				<p>Date:<strong>{appt.appt_date}</strong></p>
-				<p>Start: <strong>{appt.appt_start}</strong></p>
-				<p>End: <strong>{appt.appt_end}</strong></p>
-				<p>Notes: <strong>{appt.appt_note}</strong></p>
-			</div>
+			<tr>
+				<td>{appt.customer.firstname} {appt.customer.lastname}</td>
+				<td>Date:<strong>{appt.appt_date}</strong></td>
+				<td>Start: <strong>{appt.appt_start}</strong></td>
+				<td>End: <strong>{appt.appt_end}</strong></td>
+				<td>Notes: <strong>{appt.appt_note}</strong></td>
+			</tr>
 		)
 	}
 
