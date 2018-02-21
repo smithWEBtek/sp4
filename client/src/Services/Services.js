@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Table } from 'reactstrap'
 import * as actions from '../store/actions/index'
 
-class ServicesList extends Component {
+class Services extends Component {
 	state = {
 		customer_id: '',
 		service_id: ''
@@ -28,7 +28,7 @@ class ServicesList extends Component {
 
 		return (
 			<div>
-				<Table striped size="sm" className="ServicesList">
+				<Table striped size="sm" className="Services">
 					<thead>
 						<tr>
 							<th>Title</th>
@@ -59,4 +59,4 @@ const mapDispatchToProps = dispatch => {
 	}
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ServicesList)
+export default connect(mapStateToProps, mapDispatchToProps)(Services)

@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import * as actions from '../store/actions/index'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router'
 import CustomersList from './CustomersList'
 import Customer from './Customer'
-import EditCustomer from './EditCustomer'
-import NewCustomer from './NewCustomer'
+// import EditCustomer from './EditCustomer'
+// import NewCustomer from './NewCustomer'
 
 class Customers extends Component {
 
@@ -18,9 +18,9 @@ class Customers extends Component {
 
 		console.log('[Customers match]', match);
 
-		let customersList = <h3>Loading customers ... </h3>
+		let renderCustomers = <h3>Loading customers ... </h3>
 		if (this.props.customers) {
-			customersList = (
+			renderCustomers = (
 				<CustomersList
 					customers={this.props.customers} />
 			)
@@ -31,10 +31,10 @@ class Customers extends Component {
 				<Switch>
 					{/* <Route exact path={`${match.url}/:id/edit`} component={EditCustomer} /> */}
 					{/* <Route exact path={`${match.url}/new`} component={NewCustomer} /> */}
-					<Route exact path={`${match.url}/:id`} component={Customer} />
+					<Route path={`${match.url}/:id`} component={Customer} />
 					{/* <Route exact path={match.url} /> */}
 				</Switch>
-				{customersList}
+				{renderCustomers}
 			</div >
 		)
 	}
