@@ -1,11 +1,11 @@
 .NewAppt {
 	border: 1 px solid black;
-	width: 40%;
+	width: 60%;
 	background-color: rgb(185, 206, 206);
 	padding: 10px;
 }
 
-#scheduleAppt {
+#schedueAppt {
 	background-color: chartreuse;
 }
 
