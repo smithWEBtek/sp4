@@ -20,7 +20,6 @@ const Customer = (props) => {
 
 	return (
 		<div>
-			<h1>Customer should be here: </h1>
 			{customerCard}
 		</div>
 	)
