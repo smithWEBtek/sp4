@@ -8,7 +8,7 @@ import MainNav from '../src/UI/MainNav/MainNav'
 import Customers from '../src/Customers/Customers'
 import Appts from '../src/Appts/Appts'
 // import Assets from '../src/Assets/Assets'
-// import Services from '../src/Services/Services'
+import Services from '../src/Services/Services'
 
 class App extends Component {
 	render() {
@@ -16,10 +16,10 @@ class App extends Component {
 			<div>
 				<MainNav />
 				<Aux>
-					<Route exact path="/customers" component={Customers} />
-					<Route exact path="/appts" component={Appts} />
+					<Route path="/customers" component={Customers} />
+					<Route path="/appts" component={Appts} />
 					{/* <Route path="/assets/" component={Assets} /> */}
-					{/* <Route path="/services" component={Services} /> */}
+					<Route path="/services" component={Services} />
 				</Aux>
 			</div>
 		);
