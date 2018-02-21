@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { Table } from 'reactstrap'
 import ApptServicesList from './ApptServicesList'
 import Aux from '../hoc/Aux'
+import './Appts.css'
 
 const Appt = (props) => {
 
@@ -12,7 +13,7 @@ const Appt = (props) => {
 
 	if (appt) {
 		apptMain = (
-			<tr>
+			<tr className="Appt">
 				<td>{appt.customer.firstname} {appt.customer.lastname}</td>
 				<td>Date:<strong>{appt.appt_date}</strong></td>
 				<td>Start: <strong>{appt.appt_start}</strong></td>
@@ -24,7 +25,7 @@ const Appt = (props) => {
 
 	if (appt && appt.services) {
 		renderApptServices = (
-			<ApptServicesList services={appt.services} />
+			<tr><td><ApptServicesList services={appt.services} /></td></tr>
 		)
 	}
 
@@ -42,9 +43,9 @@ const Appt = (props) => {
 				</thead>
 				<tbody>
 					{apptMain}
+					{renderApptServices}
 				</tbody>
 			</Table>
-			{renderApptServices}
 		</div>
 	)
 }

@@ -1,4 +1,22 @@
 .NewAppt {
 	border: 1 px solid black;
+	width: 40%;
 	background-color: rgb(185, 206, 206);
+	padding: 10px;
+}
+
+#scheduleAppt {
+	background-color: chartreuse;
+}
+
+.Appt {
+	background-color: rgb(185, 206, 206);
+  margin: 20px auto; 
+	width: 80%;
+	height: 100px;
+  text-align: center;
+  box-shadow: 0 2px 3px #ccc;
+  border: 2px solid rgb(114, 104, 104);
+  padding: 10px;
+  box-sizing: border-box;
 }

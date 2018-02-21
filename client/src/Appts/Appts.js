@@ -31,8 +31,6 @@ class Appts extends Component {
 			)
 		})
 
-		let newAppt = <NewAppt />
-
 		return (
 			<div>
 				<button><Link to='/appts/new'>New Appointment</Link></button>

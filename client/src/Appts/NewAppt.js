@@ -22,13 +22,14 @@ class NewAppt extends Component {
 			appt_date: '',
 			appt_start: '',
 			appt_end: '',
-			appt_note: '',
+			appt_note: 'new appointment',
 			service_id: ''
 		})
 	}
 
 	componentDidMount() {
 		this.props.onFetchServices()
+		this.props.onFetchCustomers()
 		this.clearState()
 	}
 
@@ -138,7 +139,7 @@ class NewAppt extends Component {
 							onChange={(event) => this.setState({ appt_note: event.target.value })}
 							placeholder="Note" />
 					</p>
-					<button>Schedule Appointment</button>
+					<button id='scheduleAppt'>Schedule Appointment</button>
 				</form>
 			</div>
 		)
@@ -156,7 +157,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
 	return {
 		onCreateAppt: (data, history) => dispatch(actions.createAppt(data, history)),
-		onFetchServices: () => dispatch(actions.fetchServices())
+		onFetchServices: () => dispatch(actions.fetchServices()),
+		onFetchCustomers: () => dispatch(actions.fetchCustomers())
 	}
 }
 
