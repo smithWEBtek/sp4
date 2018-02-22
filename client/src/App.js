@@ -13,7 +13,7 @@ import Services from '../src/Services/Services'
 class App extends Component {
 	render() {
 		return (
-			<div>
+			<div className="App">
 				<MainNav />
 				<Aux>
 					<Route path="/customers" component={Customers} />

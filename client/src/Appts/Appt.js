@@ -1,52 +1,26 @@
 import React from 'react'
+import { Well, Button } from 'react-bootstrap'
 import { connect } from 'react-redux'
-import { Table } from 'reactstrap'
-import ApptServicesList from './ApptServicesList'
-// import Aux from '../hoc/Aux'
 import './Appts.css'
 
 const Appt = (props) => {
 
 	const appt = props.appts.find(apt => apt.id === +props.match.params.id)
-	let apptMain = <tr><td>Appointment is loading...</td></tr>
-	let renderApptServices = <h5>No services assigned</h5>
-
+	let apptCard = <p>Appointment is loading...</p>
 	if (appt) {
-		apptMain = (
-			<tr className="Appt">
-				<td>{appt.customer.firstname} {appt.customer.lastname}</td>
-				<td>Date:<strong>{appt.appt_date}</strong></td>
-				<td>Start: <strong>{appt.appt_start}</strong></td>
-				<td>End: <strong>{appt.appt_end}</strong></td>
-				<td>Notes: <strong>{appt.appt_note}</strong></td>
-			</tr>
-		)
-	}
-
-	if (appt && appt.services) {
-		renderApptServices = (
-			<tr><td><ApptServicesList services={appt.services} /></td></tr>
+		apptCard = (
+			<Well>
+				<Well bsSize="large">{appt.customer.firstname} {appt.customer.lastname}</Well>
+				<Well bsSize="large">{appt.appt_date.split('T')[0].toString()}</Well>
+				<Well bsSize="large" > {appt.appt_start.split('T')[1].slice(0, 5).toString()}</Well >
+				<Well bsSize="large" > {appt.appt_note}</Well >
+				<Button>Download Appt</Button>
+			</Well >
 		)
 	}
 
 	return (
-		<div>
-			<Table striped size="sm" className="CustomersList">
-				<thead>
-					<tr>
-						<th>Customer</th>
-						<th>Date</th>
-						<th>Start</th>
-						<th>End</th>
-						<th>Note</th>
-					</tr>
-				</thead>
-				<tbody>
-					{apptMain}
-					{renderApptServices}
-				</tbody>
-			</Table>
-		</div>
+		<div>{apptCard}</div>
 	)
 }
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Table } from 'reactstrap'
+import { Table } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import Aux from '../hoc/Aux'
 

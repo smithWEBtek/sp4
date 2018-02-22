@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 20180218184508) do
 
   create_table "services", force: :cascade do |t|
     t.text "title"
-    t.text "description"
+    t.text "months_since_last_svc", default: "0"
     t.integer "cost"
     t.integer "duration"
   end

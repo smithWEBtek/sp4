@@ -50,15 +50,15 @@ end
 
 DATA_services = {
   :service_keys =>
-	["title", "description", "cost", "duration"],
+	["title", "months_since_last_svc", "cost", "duration"],
   :services => [
-  ['tuning', 'one tuning at current pitch', '135','90'],
-  ['pitch raise', 'one tuning to raise pitch', '35','30'],
-  ['cleaning', 'vacuum reachable areas', '20','20'],
-  ['regulation vertical', '7 step rough regulation', '150','120'],
-  ['regulation grand', '7 step rough regulation', '300','240'],
-  ['inspection verbal', 'inspection - verbal report', '75','45'],
-  ['inspection-written', 'inspection - written report', '150', '120']
+  ['tuning & service', '18 or more', '175','120'],
+  ['tuning & service', '12-18', '155','120'],
+  ['tuning & service', '6-12', '135','100'],
+  ['tuning & service', '1-4', '125','90'],
+  ['4 hour service (pre-arranged)', '0', '350','240'],
+  ['onsite technical inspection, verbal report', '0', '75','45'],
+  ['onsite technical inspection, written report', '0', '150','60']
   ]
 }
 

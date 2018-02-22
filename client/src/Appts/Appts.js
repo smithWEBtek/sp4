@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import * as actions from '../store/actions/index'
 import { Switch, Route, Link, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { Table } from 'reactstrap'
+import { Table } from 'react-bootstrap'
 import Aux from '../hoc/Aux'
 import NewAppt from './NewAppt'
 import Available from '../Schedule/Available'
@@ -16,17 +16,15 @@ class Appts extends Component {
 
 	render() {
 		const { match } = this.props
+
 		let renderAppts = this.props.appts.map((appt, index) => {
 			return (
 				<Aux key={index}>
 					<tr>
 						<td><Link to={`/appts/${appt.id}`}>{appt.customer.lastname}</Link></td>
-						<td>{appt.appt_date}</td>
-						<td>{appt.appt_start}</td>
-						<td>{appt.appt_end}</td>
+						<td>{appt.appt_date.split('T')[0]}</td>
+						<td>{appt.appt_start.split('T')[0]}</td>
 						<td>{appt.appt_note}</td>
-						{/* <td>{appt.created_at}</td> */}
-						{/* <td>{appt.updated_at}</td> */}
 					</tr>
 				</Aux>
 			)
@@ -42,16 +40,13 @@ class Appts extends Component {
 					<Route path={`${match.url}/:id`} exact component={Appt} />
 					<Route path={match.url} exact />
 				</Switch>
-				<Table striped size="sm" className="CustomersList">
+				<Table striped size="sm" className="ApptsList">
 					<thead>
 						<tr>
-							<th>CustID</th>
+							<th>Customer</th>
 							<th>Date</th>
 							<th>Start</th>
-							<th>End</th>
 							<th>Note</th>
-							{/* <th>Created</th> */}
-							{/* <th>Updated</th> */}
 						</tr>
 					</thead>
 					<tbody>

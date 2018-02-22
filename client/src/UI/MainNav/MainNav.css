@@ -1,6 +1,6 @@
 .MainNav {
   color: rgb(255, 255, 255);
-  background-color: rgb(200, 200, 224);
+  background-color: rgb(111, 111, 138);
 	margin-top: 5px;
 }
 
@@ -25,7 +25,7 @@
 
 .Item:hover {
   font-style: italic;
-  background-color: rgb(230, 230, 243); 
+  background-color: rgb(122, 122, 139); 
   border-radius: 30%;
 }
  

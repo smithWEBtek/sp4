@@ -28,8 +28,8 @@ class Api::ServicesController < ApplicationController
 	end
 
 	def destroy
-		@service.update(service_note: 'inactive')
-		render json: { message: 'service remains in Database, with status set to inactive' }
+		@service.destroy
+		render json: { message: 'service deleted' }
 	end
 	
 		private
@@ -38,6 +38,6 @@ class Api::ServicesController < ApplicationController
 		end
 
 		def service_params
-			params.require(:service).permit(:title, :category, :format, :location, :url)
+			params.require(:service).permit(:title, :months_since_last_svc, :cost, :duration)
 		end
 end
