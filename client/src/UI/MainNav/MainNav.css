@@ -1,12 +1,12 @@
 .MainNav {
   color: rgb(255, 255, 255);
-  background-color: rgb(111, 111, 138);
+  background-color: rgb(110, 110, 156);
 	margin-top: 5px;
 }
 
 .logo-home a{
 	font-size: 2em;
-  color: rgb(90, 110, 146);
+  color: rgb(185, 191, 201);
 	text-decoration: none;
   user-select: none;
 }
@@ -18,24 +18,34 @@
 
 .Item {
   margin-right: 15px;
-  color: white;
+  color: rgb(212, 209, 209);
 	font-size: large;
 	text-decoration: none;
 }
 
 .Item:hover {
-  font-style: italic;
-  background-color: rgb(122, 122, 139); 
-  border-radius: 30%;
+	font-style: italic;
+  background-color: rgb(248, 248, 250); 
+  border-radius: 10%;
 }
- 
+
+#BrandText:hover {
+	font-style: italic;
+  background-color: rgb(158, 158, 179); 
+  border-radius: 10%;
+}
+
 .Logo {
   border-radius: 50%;
   /* animation: Logo-spin infinite 30s linear; */
-  height: 100 px;
+  height: 130 px;
+}
+
+#BrandText {
+	color: rgb(252, 253, 253);
+	font-size: 2em;
 }
  
-
 @keyframes Logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
