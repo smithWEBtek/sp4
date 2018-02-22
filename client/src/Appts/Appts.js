@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import { Table } from 'reactstrap'
 import Aux from '../hoc/Aux'
 import NewAppt from './NewAppt'
+import Available from '../Schedule/Available'
 import Appt from './Appt'
 
 class Appts extends Component {
@@ -37,6 +38,7 @@ class Appts extends Component {
 				<Switch>
 					{/* <Route path={`${match.url}/:id/edit`} exact component={EditAppt} /> */}
 					<Route path={`${match.url}/new`} exact component={NewAppt} />
+					<Route path={`${match.url}/available`} exact component={Available} />
 					<Route path={`${match.url}/:id`} exact component={Appt} />
 					<Route path={match.url} exact />
 				</Switch>

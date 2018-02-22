@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Table } from 'reactstrap'
+// import { Table } from 'reactstrap'
 import * as actions from '../store/actions/index'
 import './Appts.css'
-import Schedule from '../Schedule/Schedule'
+import Available from '../Schedule/Available'
 
 class NewAppt extends Component {
 	state = {
@@ -64,100 +64,9 @@ class NewAppt extends Component {
 
 	render() {
 
-		const select_customer = this.props.customers.map(customer => {
-			return <option value={customer.lastname} id={customer.id} key={customer.id}>{customer.lastname}</option>
-		})
-
 		return (
-			<div className="NewAppt">
-				<p>Complete form and click 'Schedule Appointment'</p>
-				<form onSubmit={(event) => this.handleSubmit(event)}>
-					<p>
-						<label>Select Customer</label>
-						<select
-							value={this.state.customer.lastname}
-							onChange={(event) => this.handleCustomerSelect(event)}>
-							{select_customer}
-						</select>
-					</p>
-
-					<hr />
-					<hr />
-					<hr />
-
-					<Schedule />
-
-					<hr />
-					<hr />
-					<p>
-						<label>Appointment Date</label>
-						<input
-							type="date"
-							value={this.state.appt_date}
-							onChange={(event) => this.setState({ appt_date: event.target.value })}
-							placeholder="date"
-							required />
-					</p>
-					<p><label>Start time</label>
-						<input
-							type="time"
-							value={this.state.appt_start}
-							onChange={(event) => this.setState({ appt_start: event.target.value })}
-							placeholder="start"
-							required />
-					</p>
-					<p><label>End time</label>
-						<input
-							type="time"
-							value={this.state.appt_end}
-							onChange={(event) => this.setState({ appt_end: event.target.value })}
-							placeholder="start"
-							required />
-					</p>
-
-
-
-					<hr />
-					<hr />
-					<hr />
-					<hr />
-					<hr />
-					<div>
-						<Table striped size="sm" className="ServicesList">
-							<thead>
-								<tr>
-									<th>Title</th>
-									<th>Description</th>
-									<th>Cost</th>
-									<th>Duration</th>
-								</tr>
-							</thead>
-							<tbody>
-								{this.props.services.map((service, index) => {
-									return (
-										<tr key={index}>
-											<td>{service.title}</td>
-											<td>{service.description}</td>
-											<td>{service.cost}</td>
-											<td>{service.duration}</td>
-											<td><button type='button' onClick={(id) => this.addService(id)}>Add Service</button></td>
-										</tr>
-									)
-								})
-								}
-							</tbody>
-						</Table>
-					</div>
-
-					<p><label>Note(optional)</label>
-						<input
-							type="textarea"
-							value={this.state.appt_note}
-							onChange={(event) => this.setState({ appt_note: event.target.value })}
-							placeholder="Note" />
-					</p>
-					<button id='scheduleAppt'>Schedule Appointment</button>
-				</form>
+			<div>
+				<Available />
 			</div>
 		)
 	}

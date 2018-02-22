@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Table } from 'reactstrap'
 import ApptServicesList from './ApptServicesList'
-import Aux from '../hoc/Aux'
+// import Aux from '../hoc/Aux'
 import './Appts.css'
 
 const Appt = (props) => {

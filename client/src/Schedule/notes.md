@@ -1,8 +1,14 @@
 
-## Scheduling rules:
-1. Dropdown start and end for available datetimes.
-2. Choices are saved in local state.
-3. onSubmit, the local state is sent to API to update DB 
+## Granular Scheduling rules:
+Dropdown start and end for choosing available datetimes.
+Dropdown multi-select lists show appt time slots for every 30 min by default
+	Future Feature: every 15 min
+	Future Feature: custom time slots
+	Future Feature: custom default appt duration
+	Future Feature: custom default appt time buffer before and after appt
+
+Choices are saved in local state & passed as props on submit
+onSubmit, the local state is sent to API to update DB 
 
 
 
