@@ -82,8 +82,13 @@ DATA_appts = {
   [1, @date, @time, @time, 'tuning and maintenance'],
   [2, @date, @time, @time, 'tuning and maintenance'],
   [3, @date, @time, @time, 'tuning and maintenance'],
-  [4, @date, @time, @time, 'tuning and maintenance'],
-	[5, @date, @time, @time, 'tuning and maintenance']
+  [4, @date, @time, @time, 'tuning and discuss upgrading piano'],
+	[5, @date, @time, @time, 'check for water damage'],
+	[6, @date, @time, @time, 'tuning and maintenance'],
+	[7, @date, @time, @time, 'prep for recital'],
+	[8, @date, @time, @time, 'tuning and maintenance'],
+	[9, @date, @time, @time, 'hammers sticking, tune and call to discuss'],
+	[10, @date, @time, @time, 'prep for selling piano']
   ]
 }
 
@@ -110,27 +115,7 @@ DATA_appt_services = {
   [7, 4],
   [8, 1],
 	[9, 1],
-	[10, 1],
-	[11, 3],
-  [12, 1],
-  [13, 1],
-  [14, 1],
-  [15, 1],
-  [16, 4],
-  [17, 1],
-  [18, 1],
-  [19, 1],
-  [20, 1],
-  [21, 5],
-  [22, 1],
-  [23, 1],
-  [24, 1],
-  [25, 1],
-  [26, 2],
-  [27, 3],
-  [28, 1],
-  [29, 4],
-	[30, 1]
+	[10, 1]
   ]
 }
 
