@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { Table } from 'reactstrap'
 import * as actions from '../store/actions/index'
 import './Appts.css'
-import Schedule from '../Schedule/Schedule'
 
 class NewAppt extends Component {
 	state = {
@@ -80,15 +79,6 @@ class NewAppt extends Component {
 							{select_customer}
 						</select>
 					</p>
-
-					<hr />
-					<hr />
-					<hr />
-
-					<Schedule />
-
-					<hr />
-					<hr />
 					<p>
 						<label>Appointment Date</label>
 						<input
@@ -115,13 +105,6 @@ class NewAppt extends Component {
 							required />
 					</p>
 
-
-
-					<hr />
-					<hr />
-					<hr />
-					<hr />
-					<hr />
 					<div>
 						<Table striped size="sm" className="ServicesList">
 							<thead>
