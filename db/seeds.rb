@@ -52,13 +52,13 @@ DATA_services = {
   :service_keys =>
 	["title", "months_since_last_svc", "cost", "duration"],
   :services => [
-  ['tuning & service', 18, 175, 120],
-  ['tuning & service', 12, 155, 120],
-  ['tuning & service', 6, 135, 100],
-  ['tuning & service', 4, 125, 90],
-  ['4 hour service (pre-arranged)', 0, 350, 240],
-  ['onsite technical inspection, verbal report', 0, 75, 45],
-  ['onsite technical inspection, written report', 0, 150, 60]
+  ['1tuning and service', 18, 175, 120],
+  ['2tuning and service', 12, 155, 120],
+  ['3tuning and service', 6, 135, 100],
+  ['4tuning and service', 4, 125, 90],
+  ['half day service (pre-arranged)', 0, 350, 240],
+  ['1onsite technical inspection, verbal report', 0, 75, 45],
+  ['2onsite technical inspection, written report', 0, 150, 60]
   ]
 }
 

@@ -40,8 +40,8 @@ class MainNav extends Component {
 						<div className="Center">
 							<br />
 							<h5>Smith Piano Services</h5>
-							<h5>Tuning, Teaching, Performing</h5>
-							<img src={Logo} height="150px" className="Logo" alt=" app-logo" /> <br />
+							<h5>Tuning, Teaching, Live Performance</h5>
+
 							<h3>II III II III II III II III II III II III II</h3>
 						</div>
 					)} />
