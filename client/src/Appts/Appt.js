@@ -10,11 +10,13 @@ const Appt = (props) => {
 	if (appt) {
 		apptCard = (
 			<Well>
-				<Well bsSize="large">{appt.customer.firstname} {appt.customer.lastname}</Well>
-				<Well bsSize="large">{appt.appt_date.split('T')[0].toString()}</Well>
-				<Well bsSize="large" > {appt.appt_start.split('T')[1].slice(0, 5).toString()}</Well >
-				<Well bsSize="large" > {appt.appt_note}</Well >
-				<Button>Download Appt</Button>
+				<Well bsSize="small">
+					{appt.customer.firstname} {appt.customer.lastname}<br />
+					{appt.appt_date.split('T')[0].toString()}<br />
+					{appt.appt_start.split('T')[1].slice(0, 5).toString()}<br />
+					{appt.appt_note}<br />
+					<Button>Download Appt</Button>
+				</Well >
 			</Well >
 		)
 	}
