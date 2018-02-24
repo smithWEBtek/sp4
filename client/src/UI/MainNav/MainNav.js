@@ -5,8 +5,6 @@ import Logo from '../Logo/Logo.svg'
 import { Grid, Collapse, Navbar, NavItem, Nav } from 'react-bootstrap'
 
 class MainNav extends Component {
-
-
 	render() {
 		return (
 			<div>
@@ -30,19 +28,22 @@ class MainNav extends Component {
 							<Link to='/appts' className="Item">appts</Link>
 						</NavItem>
 						<NavItem eventKey={4}>
-							<Link to='/services' className="Item">tech bio</Link>
+							<Link to='/inspection' className="Item">inspection</Link>
 						</NavItem>
-						<NavItem eventKey={4}>
+						<NavItem eventKey={5}>
+							<Link to='/techbio' className="Item">tech bio</Link>
+						</NavItem>
+						<NavItem eventKey={6}>
 							<Link to='/music' className="Item">music</Link>
 						</NavItem>
-						<NavItem eventKey={4}>
+						<NavItem eventKey={7}>
 							<Link to='/lessons' className="Item">lessons</Link>
 						</NavItem>
-						<NavItem eventKey={4}>
-							<Link to='/services' className="Item">contact</Link>
+						<NavItem eventKey={8}>
+							<Link to='/contact' className="Item">contact</Link>
 						</NavItem>
-						<NavItem eventKey={4}>
-							<Link to='/services' className="Item">login/schedule</Link>
+						<NavItem eventKey={9}>
+							<Link to='/appquest' className="Item">appquest</Link>
 						</NavItem>
 					</Nav>
 				</Navbar>
