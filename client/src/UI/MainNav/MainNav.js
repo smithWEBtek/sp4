@@ -30,7 +30,19 @@ class MainNav extends Component {
 							<Link to='/appts' className="Item">appts</Link>
 						</NavItem>
 						<NavItem eventKey={4}>
-							<Link to='/services' className="Item">svcs</Link>
+							<Link to='/services' className="Item">tech bio</Link>
+						</NavItem>
+						<NavItem eventKey={4}>
+							<Link to='/services' className="Item">music</Link>
+						</NavItem>
+						<NavItem eventKey={4}>
+							<Link to='/services' className="Item">lessons</Link>
+						</NavItem>
+						<NavItem eventKey={4}>
+							<Link to='/services' className="Item">contact</Link>
+						</NavItem>
+						<NavItem eventKey={4}>
+							<Link to='/services' className="Item">login/schedule</Link>
 						</NavItem>
 					</Nav>
 				</Navbar>

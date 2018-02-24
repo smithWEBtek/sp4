@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-
+import { Grid } from 'react-bootstrap'
 import { Route } from 'react-router'
 import Aux from '../src/hoc/Aux'
 import MainNav from '../src/UI/MainNav/MainNav'
@@ -13,7 +13,7 @@ import Services from '../src/Services/Services'
 class App extends Component {
 	render() {
 		return (
-			<div className="App">
+			<Grid className="App">
 				<MainNav />
 				<Aux>
 					<Route path="/customers" component={Customers} />
@@ -21,7 +21,14 @@ class App extends Component {
 					{/* <Route path="/assets/" component={Assets} /> */}
 					<Route path="/services" component={Services} />
 				</Aux>
-			</div>
+				<div>
+					<hr />
+					<hr />
+					<p>&#169;2018 Smith Piano Services</p>
+					<p>Piano technical services in New England since 1982</p>
+					<p>II III II III II III II III II III II III II III II III </p>
+				</div>
+			</Grid>
 		);
 	}
 }

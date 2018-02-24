@@ -2,6 +2,15 @@
   color: rgb(255, 255, 255);
   background-color: rgb(110, 110, 156);
 	margin-top: 5px;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.TagLine {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 1.0em;
+	float: left;
+	font-style: italic;
+	margin-left: 15px;
 }
 
 .logo-home a{
@@ -43,7 +52,7 @@
 
 #BrandText {
 	color: rgb(252, 253, 253);
-	font-size: 2em;
+	font-size: 1.5em;
 }
  
 @keyframes Logo-spin {
