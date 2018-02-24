@@ -1,5 +1,5 @@
 import React from 'react'
-import { Well, Button } from 'react-bootstrap'
+import { Well, Button } from 'reactstrap'
 import { connect } from 'react-redux'
 import './Appts.css'
 

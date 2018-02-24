@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Grid } from 'react-bootstrap'
+import { Grid } from 'reactstrap'
 import { Route } from 'react-router'
 import Aux from '../src/hoc/Aux'
 import MainNav from '../src/UI/MainNav/MainNav'

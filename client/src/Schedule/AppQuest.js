@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Grid, Row, Col } from 'react-bootstrap'
+import { Grid, Row, Col } from 'reactstrap'
 
 class ApptQuest extends Component {
 	render() {

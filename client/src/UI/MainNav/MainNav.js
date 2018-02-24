@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Route, Link } from 'react-router-dom'
 import './MainNav.css'
 import Logo from '../Logo/Logo.svg'
-import { Grid, Collapse, Navbar, NavItem, Nav } from 'react-bootstrap'
+import { Grid, Collapse, Navbar, NavItem, Nav } from 'reactstrap'
 
 class MainNav extends Component {
 	render() {

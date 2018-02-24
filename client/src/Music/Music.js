@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Grid, Row, Col, Carousel } from 'react-bootstrap'
+import { Grid, Row, Col, Carousel } from 'reactstrap'
 import './Music.css'
 
 class Music extends Component {
