@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Container, Row, Col, Carousel } from 'reactstrap'
 import './Music.css'
 
-class Music extends Component {
+class TechBio extends Component {
 	render() {
 		return (
 			<div>
@@ -48,4 +48,4 @@ class Music extends Component {
 	}
 }
 
-export default Music
+export default TechBio
