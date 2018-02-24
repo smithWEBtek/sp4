@@ -33,10 +33,10 @@ class MainNav extends Component {
 							<Link to='/services' className="Item">tech bio</Link>
 						</NavItem>
 						<NavItem eventKey={4}>
-							<Link to='/services' className="Item">music</Link>
+							<Link to='/music' className="Item">music</Link>
 						</NavItem>
 						<NavItem eventKey={4}>
-							<Link to='/services' className="Item">lessons</Link>
+							<Link to='/lessons' className="Item">lessons</Link>
 						</NavItem>
 						<NavItem eventKey={4}>
 							<Link to='/services' className="Item">contact</Link>

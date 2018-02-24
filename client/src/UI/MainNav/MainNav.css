@@ -1,6 +1,6 @@
 .MainNav {
   color: rgb(255, 255, 255);
-  background-color: rgb(110, 110, 156);
+  background-color: rgb(203, 203, 205);
 	margin-top: 5px;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -27,7 +27,7 @@
 
 .Item {
   margin-right: 15px;
-  color: rgb(212, 209, 209);
+  color: rgb(99, 90, 90);
 	font-size: large;
 	text-decoration: none;
 }
@@ -40,7 +40,7 @@
 
 #BrandText:hover {
 	font-style: italic;
-  background-color: rgb(158, 158, 179); 
+  background-color: rgb(60, 60, 91); 
   border-radius: 10%;
 }
 
@@ -51,7 +51,7 @@
 }
 
 #BrandText {
-	color: rgb(252, 253, 253);
+	color: rgb(28, 29, 29);
 	font-size: 1.5em;
 }
  

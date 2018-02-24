@@ -9,6 +9,8 @@ import Customers from '../src/Customers/Customers'
 import Appts from '../src/Appts/Appts'
 // import Assets from '../src/Assets/Assets'
 import Services from '../src/Services/Services'
+import Lessons from '../src/Lessons/Lessons'
+import Music from '../src/Music/Music'
 
 class App extends Component {
 	render() {
@@ -20,6 +22,8 @@ class App extends Component {
 					<Route path="/appts" component={Appts} />
 					{/* <Route path="/assets/" component={Assets} /> */}
 					<Route path="/services" component={Services} />
+					<Route path="/music" component={Music} />
+					<Route path="/lessons" component={Lessons} />
 				</Aux>
 				<div>
 					<hr />
