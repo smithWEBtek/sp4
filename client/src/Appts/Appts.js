@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import { Table } from 'reactstrap'
 import Aux from '../hoc/Aux'
 import NewAppt from './NewAppt'
-import Available from '../Schedule/Available'
+import Available from './Schedule/Available'
 import Appt from './Appt'
 
 class Appts extends Component {
@@ -40,7 +40,7 @@ class Appts extends Component {
 					<Route path={`${match.url}/:id`} exact component={Appt} />
 					<Route path={match.url} exact />
 				</Switch>
-				<Table striped size="sm" className="ApptsList">
+				<Table striped className="ApptsList">
 					<thead>
 						<tr>
 							<th>Customer</th>

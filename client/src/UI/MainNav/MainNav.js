@@ -1,48 +1,55 @@
 import React, { Component } from 'react'
 import { Route, Link } from 'react-router-dom'
 import './MainNav.css'
-import Logo from '../Logo/Logo.svg'
-import { Grid, Collapse, Navbar, NavItem, Nav } from 'reactstrap'
+// import Logo from '../Logo/Logo.svg'
+import {
+	Collapse,
+	Navbar,
+	NavbarToggler,
+	NavbarBrand,
+	Nav,
+	NavItem,
+	NavLink,
+	UncontrolledDropdown
+} from 'reactstrap'
 
 class MainNav extends Component {
 	render() {
 		return (
 			<div>
-				<Navbar inverse collapseOnSelect className="MainNav">
-					<Navbar.Collapse>
-						<Navbar.Header>
-							<Navbar.Brand>
-								<Link to="/" id="BrandText">SmithPiano</Link>
-							</Navbar.Brand>
-							<Navbar.Toggle />
-						</Navbar.Header>
-					</Navbar.Collapse>
+				<Navbar dark className="MainNav">
+					<Collapse>
+						<NavbarBrand>
+							<NavItem to="/" id="BrandText">SmithPiano</NavItem>
+						</NavbarBrand>
+						<NavbarToggler />
+					</Collapse>
 					<Nav>
-						<NavItem eventKey={1}>
+						<NavItem>
 							<Link to='/customers' className="Item">customers</Link>
 						</NavItem>
-						<NavItem eventKey={2}>
+						<NavItem>
 							<Link to='/assets' className="Item">assets</Link>
 						</NavItem>
-						<NavItem eventKey={3}>
+						<NavItem>
 							<Link to='/appts' className="Item">appts</Link>
 						</NavItem>
-						<NavItem eventKey={4}>
+						<NavItem>
 							<Link to='/inspection' className="Item">inspection</Link>
 						</NavItem>
-						<NavItem eventKey={5}>
+						<NavItem>
 							<Link to='/techbio' className="Item">tech bio</Link>
 						</NavItem>
-						<NavItem eventKey={6}>
+						<NavItem>
 							<Link to='/music' className="Item">music</Link>
 						</NavItem>
-						<NavItem eventKey={7}>
+						<NavItem>
 							<Link to='/lessons' className="Item">lessons</Link>
 						</NavItem>
-						<NavItem eventKey={8}>
+						<NavItem>
 							<Link to='/contact' className="Item">contact</Link>
 						</NavItem>
-						<NavItem eventKey={9}>
+						<NavItem>
 							<Link to='/appquest' className="Item">appquest</Link>
 						</NavItem>
 					</Nav>
@@ -59,7 +66,7 @@ class MainNav extends Component {
 						</div>
 					)} />
 				</div>
-			</div >
+			</div>
 		)
 	}
 }

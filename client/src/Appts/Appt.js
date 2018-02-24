@@ -1,5 +1,5 @@
 import React from 'react'
-import { Well, Button } from 'reactstrap'
+import { Card, Button } from 'reactstrap'
 import { connect } from 'react-redux'
 import './Appts.css'
 
@@ -9,15 +9,13 @@ const Appt = (props) => {
 	let apptCard = <p>Appointment is loading...</p>
 	if (appt) {
 		apptCard = (
-			<Well>
-				<Well bsSize="small">
-					{appt.customer.firstname} {appt.customer.lastname}<br />
-					{appt.appt_date.split('T')[0].toString()}<br />
-					{appt.appt_start.split('T')[1].slice(0, 5).toString()}<br />
-					{appt.appt_note}<br />
-					<Button>Download Appt</Button>
-				</Well >
-			</Well >
+			<Card>
+				{appt.customer.firstname} {appt.customer.lastname}<br />
+				{appt.appt_date.split('T')[0].toString()}<br />
+				{appt.appt_start.split('T')[1].slice(0, 5).toString()}<br />
+				{appt.appt_note}<br />
+				<Button>Download Appt</Button>
+			</Card >
 		)
 	}
 

@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import { Grid, Row, Col } from 'reactstrap'
+import { Container, Row, Col } from 'reactstrap'
 
 class ApptQuest extends Component {
 	render() {
 		return (
-			<Grid>
+			<Container>
 				<Row>
 					<Col xs={6} md={4} />
 					<h3>SCHEDULE PIANO SERVICE</h3>
@@ -30,10 +30,10 @@ class ApptQuest extends Component {
 					</ul>
 				</Row >
 				<Row>
-					<iframe src="http://www.appointmentquest.com/scheduler/2170076323" style={{ width: '100%', height: '900px', border: '0' }}>
+					<iframe title="aq-scheduler" src="http://www.appointmentquest.com/scheduler/2170076323" style={{ width: '100%', height: '900px', border: '0' }}>
 					</iframe>
 				</Row>
-			</Grid>
+			</Container>
 		)
 	}
 }

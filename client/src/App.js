@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Grid } from 'reactstrap'
+import { Container } from 'reactstrap'
 import { Route } from 'react-router'
 import Aux from '../src/hoc/Aux'
 import MainNav from '../src/UI/MainNav/MainNav'
@@ -14,12 +14,12 @@ import Lessons from '../src/Lessons/Lessons'
 import Music from '../src/Music/Music'
 import TechBio from '../src/TechBio/TechBio'
 import Contact from '../src/Contact/Contact'
-import AppQuest from '../src/Schedule/AppQuest'
+import AppQuest from '../src/Appts/Schedule/AppQuest'
 
 class App extends Component {
 	render() {
 		return (
-			<Grid className="App">
+			<Container className="App">
 				<MainNav />
 				<Aux>
 					<Route path="/customers" component={Customers} />
@@ -40,7 +40,7 @@ class App extends Component {
 					<p>Piano technical services in New England since 1982</p>
 					<p>II III II III II III II III II III II III II III II III </p>
 				</div>
-			</Grid>
+			</Container>
 		);
 	}
 }
