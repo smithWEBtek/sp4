@@ -7,7 +7,7 @@ class MainNav extends Component {
 
 	render() {
 		return (
-			<Container>
+			<div>
 				<Navbar className="MainNav" light expand="md">
 					<div className="logo-home">
 						<Link to='/'>SmithPiano</Link>
@@ -35,7 +35,7 @@ class MainNav extends Component {
 						</div>
 					)} />
 				</div>
-			</Container >
+			</div>
 		)
 	}
 }

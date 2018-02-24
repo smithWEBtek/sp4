@@ -44,12 +44,6 @@
   border-radius: 10%;
 }
 
-.Logo {
-  border-radius: 50%;
-  /* animation: Logo-spin infinite 30s linear; */
-  height: 130 px;
-}
-
 #BrandText {
 	color: rgb(27, 54, 54);
 	font-size: 1.5em;

@@ -10,23 +10,16 @@ class Lessons extends Component {
 
 
 		return (
-			// <Container>
-			// 	<Row>
-			// 		<Img src="http://res.cloudinary.com/smithwebtek/image/upload/v1519490185/sp-site/recording-MichaelBlum-Initiation3.jpg" />
-			// 		<Img src="http://res.cloudinary.com/smithwebtek/image/upload/v1519490185/sp-site/piano-teaching.bmp" />
-			// 		<Img src="http://res.cloudinary.com/smithwebtek/image/upload/v1519490184/sp-site/piano-doctor-couch.jpg" />
-			// 	</Row>
-			// </Container >
 
 			<Container>
 				<Row>
 					<Col xs="3">
 						<div>
-							<a href="./docs/policy.pdf">Studio Policy</a><br />
-							<a href="./docs/staff_blank.pdf">Staff - blank</a><br />
-							<a href="./docs/piano_melody.pdf">Staff - piano and melody</a><br />
-							<a href="./docs/staff_4bar_single.pdf">Staff - 4bar single</a><br />
-							<a href="./docs/staff_4bar_double.pdf">Staff - 4bar double</a><br />
+							<a href="http://res.cloudinary.com/smithwebtek/image/upload/v1519505269/sp-site/policy.pdf">Studio Policy</a><br />
+							<a href="http://res.cloudinary.com/smithwebtek/image/upload/v1519505268/sp-site/staff-blank.pdf">Staff - blank</a><br />
+							<a href="http://res.cloudinary.com/smithwebtek/image/upload/v1519505268/sp-site/staff-piano-melody.pdf">Staff - piano and melody</a><br />
+							<a href="http://res.cloudinary.com/smithwebtek/image/upload/v1519505268/sp-site/staff-4bar-single.pdf">Staff - 4bar single</a><br />
+							<a href="http://res.cloudinary.com/smithwebtek/image/upload/v1519505268/sp-site/staff-4bar-double.pdf">Staff - 4bar double</a><br />
 						</div>
 					</Col>
 					<Col xs="9">
