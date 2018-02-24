@@ -1,121 +1,73 @@
 import React, { Component } from 'react'
-import {
-	Carousel,
-	CarouselItem,
-	CarouselControl,
-	CarouselIndicators,
-	CarouselCaption,
-	Container
-} from 'reactstrap';
+import Img from 'react-image'
+import { Col, Container, Row } from 'reactstrap'
 import './Lessons.css'
-import LessonsContent from './LessonsContent'
 import Aux from '../hoc/Aux'
 
-const items = [
-	{
-		src: "http://res.cloudinary.com/smithwebtek/image/upload/v1519490185/sp-site/recording-MichaelBlum-Initiation3.jpg",
-		altText: 'recording',
-		caption: 'recording'
-	},
-	{
-		src: "http://res.cloudinary.com/smithwebtek/image/upload/v1519490185/sp-site/piano-teaching.bmp",
-		altText: 'brad playing',
-		caption: 'Brad on a gig'
-	},
-	{
-		src: "http://res.cloudinary.com/smithwebtek/image/upload/v1519490184/sp-site/piano-doctor-couch.jpg",
-		altText: 'brad playing',
-		caption: 'Brad on a gig'
-	}
-];
-// 	{
-// 		src: 'data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22800%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15ba800aa1d%20text%20%7B%20fill%3A%23555%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A40pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15ba800aa1d%22%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22285.921875%22%20y%3D%22218.3%22%3EFirst%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E',
-// 		altText: 'Slide 1',
-// 		caption: 'Slide 1'
-// 	},
-// 	{
-// 		src: 'data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22800%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15ba800aa20%20text%20%7B%20fill%3A%23444%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A40pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15ba800aa20%22%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20fill%3D%22%23666%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22247.3203125%22%20y%3D%22218.3%22%3ESecond%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E',
-// 		altText: 'Slide 2',
-// 		caption: 'Slide 2'
-// 	},
-// 	{
-// 		src: 'data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22800%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15ba800aa21%20text%20%7B%20fill%3A%23333%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A40pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15ba800aa21%22%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20fill%3D%22%23555%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22277%22%20y%3D%22218.3%22%3EThird%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E',
-// 		altText: 'Slide 3',
-// 		caption: 'Slide 3'
-// 	}
-// ];
-
 class Lessons extends Component {
-	constructor(props) {
-		super(props);
-		this.state = { activeIndex: 0 };
-		this.next = this.next.bind(this);
-		this.previous = this.previous.bind(this);
-		this.goToIndex = this.goToIndex.bind(this);
-		this.onExiting = this.onExiting.bind(this);
-		this.onExited = this.onExited.bind(this);
-	}
-
-	onExiting() {
-		this.animating = true;
-	}
-
-	onExited() {
-		this.animating = false;
-	}
-
-	next() {
-		if (this.animating) return;
-		const nextIndex = this.state.activeIndex === items.length - 1 ? 0 : this.state.activeIndex + 1;
-		this.setState({ activeIndex: nextIndex });
-	}
-
-	previous() {
-		if (this.animating) return;
-		const nextIndex = this.state.activeIndex === 0 ? items.length - 1 : this.state.activeIndex - 1;
-		this.setState({ activeIndex: nextIndex });
-	}
-
-	goToIndex(newIndex) {
-		if (this.animating) return;
-		this.setState({ activeIndex: newIndex });
-	}
 
 	render() {
-		const { activeIndex } = this.state;
 
-		const slides = items.map((item) => {
-			return (
-				<CarouselItem
-					onExiting={this.onExiting}
-					onExited={this.onExited}
-					key={item.src}
-					src={item.src}
-					altText={item.altText}
-					caption={item.caption}
-					img={item.src}>
-					<CarouselCaption captionText={item.caption} captionHeader={item.caption} />
-				</CarouselItem>
-			);
-		});
 
 		return (
+			// <Container>
+			// 	<Row>
+			// 		<Img src="http://res.cloudinary.com/smithwebtek/image/upload/v1519490185/sp-site/recording-MichaelBlum-Initiation3.jpg" />
+			// 		<Img src="http://res.cloudinary.com/smithwebtek/image/upload/v1519490185/sp-site/piano-teaching.bmp" />
+			// 		<Img src="http://res.cloudinary.com/smithwebtek/image/upload/v1519490184/sp-site/piano-doctor-couch.jpg" />
+			// 	</Row>
+			// </Container >
+
 			<Container>
-				<Carousel
-					activeIndex={activeIndex}
-					next={this.next}
-					previous={this.previous}
-				>
-					<CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
-					{slides}
-					<CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
-					<CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
-				</Carousel>
-				{/* <LessonsContent /> */}
+				<Row>
+					<Col xs="3">
+						<div>
+							<a href="./docs/policy.pdf">Studio Policy</a><br />
+							<a href="./docs/staff_blank.pdf">Staff - blank</a><br />
+							<a href="./docs/piano_melody.pdf">Staff - piano and melody</a><br />
+							<a href="./docs/staff_4bar_single.pdf">Staff - 4bar single</a><br />
+							<a href="./docs/staff_4bar_double.pdf">Staff - 4bar double</a><br />
+						</div>
+					</Col>
+					<Col xs="9">
+						<div>
+							<h4><strong>Berklee College graduate with 30+ years professional playing experience.</strong></h4>
+							<h5>Private lessons in jazz piano, improvisation, harmony for students ages 14 and up.</h5>
+							<h5>Based in the jazz approach to learning, these lessons are applicable to any style of music.</h5>
+							<p><strong>Who will benefit from these lessons?</strong></p>
+						</div>
+						<div>
+							<ul>
+								<li>Intermediate to advanced piano students, and jazz piano enthusiasts</li>
+								<li>Classical piano teachers</li>
+								<li>Vocalists</li>
+								<li>Musicians involved in playing and teaching Religious/Sacred Music</li>
+								<li>Professional Instrumentalists (non-pianists)</li>
+							</ul>
+							<h4><strong>What types of goals can be accomplished with these lessons?</strong></h4>
+							<ul>
+								<li>Playing, Improvising, Repertoire and Styles</li>
+								<li>Improvisation and harmony in various styles of music</li>
+								<li>Playing in a variety of styles without sheet music vs. ‘classical-only-all-written-music’ lessons</li>
+								<li>Playing a set of Christmas carols, Beatles, Elton John, Billy Joel or show tunes just for FUN!Writing, arranging, leading musical groups</li>
+								<li>Write your own music or arrangements for auditions and gigs</li>
+								<li>Learn to accompany yourself on the piano</li>
+								<li>Learn chords, scales, harmony and jazz theory</li>
+								<li>Musical tools for versatility leading and playing with professional musicians Teaching Approaches and New Opportunities</li>
+								<li>Draw from principles learned in jazz to playing, improvising, writing, and teaching</li>
+								<li>Enhance classical playing by integrating principles learned in jazz</li>
+								<li>Add a simplified, organic approach to teaching methods, to reach more students</li>
+								<li>Put away the sheet music, playing and teaching from a different kind of ‘memory’</li>
+								<li>Expand your offerings, teaching a wider range of musical styles</li>
+								<li>Use the study of jazz piano, to develop within any style of playingCollege prep for future music majors</li>
+								<li>Playing professionally as a solo pianist, or accompanist</li>
+							</ul>
+						</div>
+					</Col>
+				</Row>
 			</Container>
-		);
+		)
 	}
 }
 
-
-export default Lessons;
+export default Lessons

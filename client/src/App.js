@@ -33,7 +33,7 @@ class App extends Component {
 					<Route path="/contact" component={Contact} />
 					<Route path="/appquest" component={AppQuest} />
 				</Aux>
-				<div>
+				<div className="Center">
 					<hr />
 					<hr />
 					<p>&#169;2018 Smith Piano Services</p>
