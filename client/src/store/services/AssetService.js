@@ -1,9 +1,7 @@
-const CLOUD_API_URL = process.env.CLOUD_API_URL
+// const CLOUD_API_URL = process.env.CLOUD_API_URL
 // const CLOUD_API_URL = 'https://777466575657829:g7KcOFtLuC_0ZK5HMKNl3c48AJI@api.cloudinary.com/v1_1/smithwebtek'
-console.log('CLOUD_API_URL', CLOUD_API_URL);
 
-
-
+const CLOUD_API_URL = 'https://res.cloudinary.com/smithwebtek/image/list/album.json'
 
 const AssetService = {
 	createAsset(asset) {
@@ -19,7 +17,7 @@ const AssetService = {
 			})
 	},
 	fetchAssets() {
-		return fetch(`${CLOUD_API_URL}/resources/image`)
+		return fetch(`${CLOUD_API_URL}`)
 			.then(response => response.json())
 			.catch(error => {
 				console.log('[apiservice][fetchAssets] ERROR: ', error)

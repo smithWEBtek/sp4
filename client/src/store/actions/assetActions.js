@@ -44,7 +44,7 @@ export const fetchAssets = () => {
 		AssetService.fetchAssets()
 			.then(response => {
 
-				dispatch({ type: actionTypes.FETCH_ASSETS, assetsList: response })
+				dispatch({ type: actionTypes.FETCH_ASSETS, assetsList: response.resources })
 				dispatch(fetchAssetsSuccess())
 			})
 			.catch(error => {

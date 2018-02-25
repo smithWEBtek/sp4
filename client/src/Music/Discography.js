@@ -6,14 +6,30 @@ import * as actions from '../store/actions/index'
 
 class Discography extends Component {
 	state = {
-		images: []
+		assets: [],
+		imageUrls: []
 	}
 
 	componentDidMount() {
 		this.props.onFetchAssets()
-		this.setState({ images: this.props.assets })
-		console.log('[Discography]', this.props.assets)
+		this.setState({ assets: this.props.assets })
+		console.log(this.props.assets);
+
+		let urls = this.makeImageUrls()
 	}
+
+	makeImageUrls = () => {
+		this.props.assets.map(img => {
+			let baseUrl = 'https://res.cloudinary.com/smithwebtek/image/upload/v'
+			let format = img.format
+			let publicId = img.public_id
+			let version = img.version
+			return (
+				baseUrl + version + '/' + publicId + format
+			)
+		})
+	}
+
 
 	render() {
 		return (
