@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Route, Link } from 'react-router-dom'
 import './MainNav.css'
-import { Container, Collapse, Navbar, NavbarToggler, Nav } from 'reactstrap'
+import { Navbar, Nav } from 'reactstrap'
 
 class MainNav extends Component {
 

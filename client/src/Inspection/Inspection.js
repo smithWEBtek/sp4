@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Container, Row, Col, Carousel } from 'reactstrap'
+import { Container, Row, Col } from 'reactstrap'
 import './Inspection.css'
 
 class Inspection extends Component {

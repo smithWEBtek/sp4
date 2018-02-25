@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import Img from 'react-image'
+// import Img from 'react-image'
 import { Col, Container, Row } from 'reactstrap'
 import './TechBio.css'
-import Aux from '../hoc/Aux'
+// import Aux from '../hoc/Aux'
 
 class TechBio extends Component {
 	render() {

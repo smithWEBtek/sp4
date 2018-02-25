@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import Img from 'react-image'
+// import Img from 'react-image'
 import { Col, Container, Row } from 'reactstrap'
 import './Lessons.css'
-import Aux from '../hoc/Aux'
+// import Aux from '../hoc/Aux'
 
 class Lessons extends Component {
 

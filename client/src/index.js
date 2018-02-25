@@ -11,7 +11,6 @@ import apptReducer from './store/reducers/apptReducer'
 import assetReducer from './store/reducers/assetReducer'
 import App from './App'
 
-
 const rootReducer = combineReducers({
 	cst: customerReducer,
 	svc: serviceReducer,

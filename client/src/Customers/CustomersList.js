@@ -17,14 +17,8 @@ const CustomersList = (props) => {
 						<Link
 							to={`/customers/${customer.id}`}
 							style={{ marginRight: '5px' }}
-							key={customer.id}>{customer.lastname}
+							key={customer.id}>{customer.fullname}
 						</Link>
-					</td>
-					<td>
-						{customer.firstname}
-					</td>
-					<td>
-						{customer.lastname}
 					</td>
 					<td>
 						{customer.city}
@@ -33,7 +27,16 @@ const CustomersList = (props) => {
 						{customer.state}
 					</td>
 					<td>
-						{customer.brand}
+						{customer.email}
+					</td>
+					<td>
+						{customer.last_meeting}
+					</td>
+					<td>
+						{customer.last_reminder}
+					</td>
+					<td>
+						{customer.about}
 					</td>
 				</tr>
 			</Aux>
@@ -45,12 +48,12 @@ const CustomersList = (props) => {
 			<Table striped size="sm" className="CustomersList">
 				<thead>
 					<tr>
-						<th>ID</th>
-						<th>Last</th>
-						<th>First</th>
+						<th>Fullname</th>
 						<th>City</th>
 						<th>State</th>
-						<th>Brand</th>
+						<th>Meeting</th>
+						<th>Reminder</th>
+						<th>About</th>
 					</tr>
 				</thead>
 				<tbody>

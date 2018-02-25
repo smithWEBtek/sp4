@@ -1,5 +1,4 @@
-const API_URL = 'http://127.0.0.1:3001/api' || 'https://swt-sp4.herokuapp.com/api'
-// const API_URL = 'https://swt-sp4.herokuapp.com/api'
+const API_URL = 'https://api.cloudinary.com/v1_1/smithwebtek'
 
 const AssetService = {
 	createAsset(asset) {
@@ -15,7 +14,7 @@ const AssetService = {
 			})
 	},
 	fetchAssets() {
-		return fetch(`${API_URL}/assets`)
+		return fetch(`${API_URL}/resources/image`)
 			.then(response => response.json())
 			.catch(error => {
 				console.log('[apiservice][fetchAssets] ERROR: ', error)
