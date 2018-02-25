@@ -23,6 +23,7 @@
 
 .ApptsList {
 	border: 1px solid black;
+	font-size-adjust: inherit;
 	color: black;
 	width: 100%;
 }

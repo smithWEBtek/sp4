@@ -7,7 +7,6 @@ import MainNav from '../src/UI/MainNav/MainNav'
 
 import Customers from '../src/Customers/Customers'
 import Appts from '../src/Appts/Appts'
-// import Assets from '../src/Assets/Assets'
 import Services from '../src/Services/Services'
 import Inspection from '../src/Inspection/Inspection'
 import Lessons from '../src/Lessons/Lessons'
@@ -24,7 +23,6 @@ class App extends Component {
 				<Aux>
 					<Route path="/customers" component={Customers} />
 					<Route path="/appts" component={Appts} />
-					{/* <Route path="/assets/" component={Assets} /> */}
 					<Route path="/services" component={Services} />
 					<Route path="/inspection" component={Inspection} />
 					<Route path="/techbio" component={TechBio} />
@@ -32,6 +30,7 @@ class App extends Component {
 					<Route path="/lessons" component={Lessons} />
 					<Route path="/contact" component={Contact} />
 					<Route path="/appquest" component={AppQuest} />
+					<Route path="/customers" component={Customers} />
 				</Aux>
 				<div className="Center">
 					<hr />

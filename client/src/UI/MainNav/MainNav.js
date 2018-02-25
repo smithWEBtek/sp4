@@ -13,14 +13,14 @@ class MainNav extends Component {
 						<Link to='/'>SmithPiano</Link>
 					</div>
 					<Nav navbar>
-						<Link to='/assets' className="Item">assets</Link>
-						<Link to='/appts' className="Item">appts</Link>
-						<Link to='/inspection' className="Item">inspection</Link>
-						<Link to='/techbio' className="Item">tech bio</Link>
-						<Link to='/music' className="Item">music</Link>
-						<Link to='/lessons' className="Item">lessons</Link>
-						<Link to='/contact' className="Item">contact</Link>
-						<Link to='/appquest' className="Item">appquest</Link>
+						<button className="Item"><Link to='/appquest' >schedule appt</Link></button>
+						<button className="Item"><Link to='/appts' >appts</Link></button>
+						<button className="Item"><Link to='/inspection' >inspection</Link></button>
+						<button className="Item"><Link to='/techbio' >tech bio</Link></button>
+						<button className="Item"><Link to='/music' >music</Link></button>
+						<button className="Item"><Link to='/lessons' >lessons</Link></button>
+						<button className="Item"><Link to='/contact' >contact</Link></button>
+						<button className="Item"><Link to='/customers' >customers</Link></button>
 					</Nav>
 				</Navbar >
 				<div>
