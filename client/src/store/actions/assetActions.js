@@ -38,13 +38,18 @@ export const fetchAssetsSuccess = (assets) => {
 export const fetchAssetsFail = (error) => {
 	return { type: actionTypes.FETCH_ASSETS_FAIL, error: error }
 }
+
+// export const syncDatabaseAssets = (assets) => {
+// 	return { type: actionTypes.SYNC_DB_ASSETS, assetsList: assets }
+// }
+
 export const fetchAssets = () => {
 	return dispatch => {
 		dispatch(fetchAssetsStart())
 		AssetService.fetchAssets()
 			.then(response => {
-
 				dispatch({ type: actionTypes.FETCH_ASSETS, assetsList: response.resources })
+				// dispatch(syncDatabaseAssets())
 				dispatch(fetchAssetsSuccess())
 			})
 			.catch(error => {

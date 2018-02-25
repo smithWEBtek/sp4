@@ -1,40 +1,17 @@
 
 DATA_assets = {
   :asset_keys =>
-    ["title", "category", "description", "format", "location", "url"],
-  :assets => [
-    ["El Manisero", "Salsa", "salsa chart", "pdf", "cloud", "https://res.cloudinary.com/smithwebtek/image/upload/v1509296858/charts/El_Manisero.pdf"],
-    ["Frenesi", "Salsa", "salsa chart", "pdf", "cloud","https://res.cloudinary.com/smithwebtek/image/upload/v1509296858/charts/Frenesi.pdf"],
-    ["El Cuarto de Tula", "Salsa", "salsa chart", "pdf", "cloud","https://res.cloudinary.com/smithwebtek/image/upload/v1509296858/charts/El_Cuarto_de_Tula.pdf"],
-    ["Capullito De Aleli", "Salsa", "salsa chart", "pdf", "cloud","https://res.cloudinary.com/smithwebtek/image/upload/v1509296858/charts/Capullito_De_Aleli.pdf"],
-    ["El Cantante", "Salsa", "salsa chart", "pdf", "cloud","https://res.cloudinary.com/smithwebtek/image/upload/v1509296858/charts/El_Cantante-leadSheet.pdf"],
-    ["Guantanamera", "Salsa", "salsa chart", "pdf", "cloud","https://res.cloudinary.com/smithwebtek/image/upload/v1509296858/charts/Guantanamera.pdf"],
-    ["Chan Chan", "Salsa", "salsa chart", "pdf", "cloud","https://res.cloudinary.com/smithwebtek/image/upload/v1509296857/charts/Chan_Chan_-_lead_sheet.pdf"],
-    ["Chucho", "Salsa", "salsa chart", "pdf", "cloud","https://res.cloudinary.com/smithwebtek/image/upload/v1509296857/charts/Chucho.pdf"],
-    ["Castellano Que Bueno Baila Usted", "Salsa", "salsa chart", "pdf", "cloud","https://res.cloudinary.com/smithwebtek/image/upload/v1509296857/charts/Castellano_Que_Bueno_Baila_Usted.pdf"],
-    ["A Night In Tunisia", "Salsa", "salsa chart", "pdf","cloud",
-    "https://res.cloudinary.com/smithwebtek/image/upload/v1509296857/charts/A_Night_In_Tunisia.pdf"],
-    ['cycle of fifths 1', 'harmony', '12 keys in 12 bars', 'doc', 'cloud', 'no_url_given'],
-    ['blues in F', 'blues', '12 bar blues', 'doc', 'cloud', 'no_url_given'],
-    ['II-V-I 4bar', 'improv', '4 bar phrases', 'aud', 'cloud', 'no_url_given'],
-    ['maj triad', 'chords', 'major triad inversions', 'doc', 'cloud', 'no_url_given'],
-    ['min triad', 'chords', 'minor triad inversions', 'doc', 'cloud', 'no_url_given'],
-    ['major scales', 'scales', 'major scales', 'aud', 'cloud', 'no_url_given'],
-    ['approach notes', 'improv', 'approach notes', 'doc', 'cloud', 'no_url_given'],
-    ['bi chords', 'improv', 'bi chords', 'doc', 'cloud', 'no_url_given'],
-    ['Autumn Leaves', 'tune', 'standard', 'doc', 'cloud', 'no_url_given'],
-    ['Blue Bossa', 'tune', 'standard', 'doc', 'cloud', 'no_url_given'],
-    ['All The Things', 'tune', 'standard', 'doc', 'cloud', 'no_url_given'],
-    ['I Got Rhythm', 'tune', 'standard', 'doc', 'cloud', 'no_url_given'],
-    ["Vereno audio", "salsa", "exercise salsa montuno", "aud", "soundcloud", "383625701"],
-    ["Misty-salsa", "latin jazz", "latin jazz trio", "aud", "soundcloud", "253001471"],
-    ["Ven Morena Montuno", "Salsa", "basic piano montuno", "vid", "youtube", "https://www.youtube.com/embed/JntdJkawVF4?rel=0"],
-    ["Montuno Lesson 1", "Salsa", "basic piano montuno", "vid", "youtube", "https://www.youtube.com/embed/CVX7-eZReqs?rel=0"],
-    ["Salsa 1", "Salsa", "basic piano montuno", "vid", "youtube", "https://www.youtube.com/embed/-2mu-Hrr838"],
-    ['Bill Evans - Universal Mind', 'documentary', 'philosophy of music', 'vid', 'youtube', 'https://www.youtube.com/embed/QwXAqIaUahI?rel=0'],
-    ['Gary Burton - Improvisation', 'master class', 'philosophy of improv', 'vid', 'youtube', 'https://www.youtube.com/embed/t2txO_u2eNg?rel=0'],
-    ['Kenny Werner - Effortless Mastery', 'master class', 'psychology of playing', 'vid', 'youtube', 'https://www.youtube.com/embed/CBnYgcmSJG8?rel=0'],
-    ['Kurt Elling - Role of Band Leader', 'master class', 'leading a gig', 'vid', 'youtube', 'https://www.youtube.com/embed/stbmhcSLXXw?rel=0']
+    ["public_id", "version", "format", "width", "height", "base_url", "url"],
+  :assets => [		
+		["sp-site/album-simone", "1519490171", "jpg", "600", "600"],
+		["sp-site/album-michael-blum-initiation", "1519490170", "jpg", "960", "960"],
+		["sp-site/album-chris", "1519490170", "jpg", "215", "215"],
+		["sp-site/album-blum-oscar", "1519490170", "jpg", "703", "739"],
+		["sp-site/album-blum-init", "1519490170", "jpg", "960", "960"],
+		["sp-site/album-reef", "1519490170", "jpg", "161", "160"],
+		["sp-site/album-blum-commit", "1519490170", "jpg", "500", "500"],
+		["sp-site/album-alphonso", "1519490169", "jpg", "650", "637"],
+		["sp-site/album-bees", "1519490169", "jpg", "110", "110"]
   ]
 }
 

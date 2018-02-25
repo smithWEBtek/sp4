@@ -32,8 +32,8 @@ export const createCustomer = (data, history) => {
 export const fetchCustomersStart = () => {
 	return { type: actionTypes.FETCH_CUSTOMERS_START }
 }
-export const fetchCustomersSuccess = (customers) => {
-	return { type: actionTypes.FETCH_CUSTOMERS_SUCCESS, customersList: customers }
+export const fetchCustomersSuccess = () => {
+	return { type: actionTypes.FETCH_CUSTOMERS_SUCCESS }
 }
 export const fetchCustomersFail = (error) => {
 	return { type: actionTypes.FETCH_CUSTOMERS_FAIL, error: error }
