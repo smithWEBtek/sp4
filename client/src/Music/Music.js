@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Col, Container, Row } from 'reactstrap'
 import './Music.css'
-import Img from 'react-image'
 import Discography from './Discography'
 
 class Music extends Component {
@@ -62,25 +61,25 @@ class Music extends Component {
 							<h3>Latin Keyboard Trio</h3>
 							<h5>II III II III II III II III II III II III II III</h5>
 							<p>Keyboard w/left-hand bass, guitar, percussion.</p>
-							<iframe title='asdf1' width="300" height="552" scrolling="no" frameBorder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/207133298andamp;color=%23ff5500andamp;auto_play=falseandamp;hide_related=falseandamp;show_comments=trueandamp;show_user=trueandamp;show_reposts=false"></iframe>
+							{/* <iframe title='asdf1' width="300" height="552" scrolling="no" frameBorder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/207133298andamp;color=%23ff5500andamp;auto_play=falseandamp;hide_related=falseandamp;show_comments=trueandamp;show_user=trueandamp;show_reposts=false"></iframe> */}
 						</Col>
 						<Col xs="8">
-							<a name='funktrio'></a>
+							{/* <a name='funktrio'></a> */}
 							<h3>Funk Rock Trio</h3>
 							<h5>II III II III II III II III II III II III II III</h5>
 							<p>Keyboard w/left-hand bass, electric guitar, drums</p>
-							<iframe title='asdf2' width="300" height="180" src="https://www.youtube.com/embed/KhY47CvgsQ4" frameBorder="0" allowFullScreen="yes"></iframe>
-							<iframe title='asdf3' width="300" height="180" src="https://www.youtube.com/embed/sn3P9Ei58D0" frameBorder="0" allowFullScreen="yes"></iframe>
-							<iframe title='asdf4' width="300" height="180" src="https://www.youtube.com/embed/WSEFKzdlrGM" frameBorder="0" allowFullScreen="yes"></iframe>
-							<iframe title='asdf5' width="300" height="180" src="https://www.youtube.com/embed/Q1KJ5Mxnaps" frameBorder="0" allowFullScreen="yes"></iframe>
-							<iframe title='asdf6' width="300" height="180" src="https://www.youtube.com/embed/keS0riw3nHw" frameBorder="0" allowFullScreen="yes"></iframe>
+							{/* <iframe title='asdf2' width="300" height="180" src="https://www.youtube.com/embed/KhY47CvgsQ4" frameBorder="0" allowFullScreen="yes"></iframe> */}
+							{/* <iframe title='asdf3' width="300" height="180" src="https://www.youtube.com/embed/sn3P9Ei58D0" frameBorder="0" allowFullScreen="yes"></iframe> */}
+							{/* <iframe title='asdf4' width="300" height="180" src="https://www.youtube.com/embed/WSEFKzdlrGM" frameBorder="0" allowFullScreen="yes"></iframe> */}
+							{/* <iframe title='asdf5' width="300" height="180" src="https://www.youtube.com/embed/Q1KJ5Mxnaps" frameBorder="0" allowFullScreen="yes"></iframe> */}
+							{/* <iframe title='asdf6' width="300" height="180" src="https://www.youtube.com/embed/keS0riw3nHw" frameBorder="0" allowFullScreen="yes"></iframe> */}
 						</Col>
 					</Row>
 
 					<Row>
 						<Col xs="12">
 							<br /><br />
-							<a name='jazzpianotrio'></a>
+							{/* <a name='jazzpianotrio'></a> */}
 							<button><a href='#top'>top</a></button>
 							<hr />
 						</Col>
@@ -89,21 +88,21 @@ class Music extends Component {
 							<h3>Cabaret Trio</h3>
 							<h5>II III II III II III II III II III II III II III</h5>
 							<p>Vocalist, keyboards w/left-hand bass, drums</p>
-							<iframe width="300" height="180" src="https://www.youtube.com/embed/sZfEtsbbtHA" frameBorder="0" allowFullScreen="yes"></iframe>
-							<iframe width="300" height="180" src="https://www.youtube.com/embed/Behsbq2fRio?rel=0" frameBorder="0" allowFullScreen></iframe>
-							<iframe width="300" height="180" src="https://www.youtube.com/embed/GkKpxkcFPvw?rel=0" frameBorder="0" allowFullScreen></iframe>
+							{/* <iframe width="300" height="180" src="https://www.youtube.com/embed/sZfEtsbbtHA" frameBorder="0" allowFullScreen="yes"></iframe> */}
+							{/* <iframe width="300" height="180" src="https://www.youtube.com/embed/Behsbq2fRio?rel=0" frameBorder="0" allowFullScreen></iframe> */}
+							{/* <iframe width="300" height="180" src="https://www.youtube.com/embed/GkKpxkcFPvw?rel=0" frameBorder="0" allowFullScreen></iframe> */}
 
 						</Col>
 						<Col xs="4">
 							<h3>Jazz Piano Trio</h3>
 							<h5>II III II III II III II III II III II III II III</h5>
 							<p>Piano, bass, drums (various trios)</p>
-							<iframe width="300" height="540" scrolling="no" frameBorder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/207141804andamp;color=%23ff5500andamp;auto_play=falseandamp;hide_related=falseandamp;show_comments=trueandamp;show_user=trueandamp;show_reposts=false"></iframe>
+							{/* <iframe width="300" height="540" scrolling="no" frameBorder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/207141804andamp;color=%23ff5500andamp;auto_play=falseandamp;hide_related=falseandamp;show_comments=trueandamp;show_user=trueandamp;show_reposts=false"></iframe> */}
 						</Col>
 						<Col xs="4">
-							<iframe width="300" height="180" src="https://www.youtube.com/embed/b3FDVFas-wY" frameBorder="0" allowFullScreen></iframe>
-							<iframe width="300" height="180" src="https://www.youtube.com/embed/uHAVx-BdAbg" frameBorder="0" allowFullScreen></iframe>
-							<iframe width="300" height="180" src="http://www.ustream.tv/embed/recorded/108639266?html5ui" frameBorder="0" allowFullScreen></iframe>
+							{/* <iframe width="300" height="180" src="https://www.youtube.com/embed/b3FDVFas-wY" frameBorder="0" allowFullScreen></iframe> */}
+							{/* <iframe width="300" height="180" src="https://www.youtube.com/embed/uHAVx-BdAbg" frameBorder="0" allowFullScreen></iframe> */}
+							{/* <iframe width="300" height="180" src="http://www.ustream.tv/embed/recorded/108639266?html5ui" frameBorder="0" allowFullScreen></iframe> */}
 							<p>Trio Concert: Zachary Winter (bass), Joe Hunt (drums): Tribute to Ray Brown</p>
 						</Col>
 					</Row>
@@ -111,32 +110,32 @@ class Music extends Component {
 					<Row>
 						<Col xs="12">
 							<br /><br />
-							<a name='vanjam'></a>
+							{/* <a name='vanjam'></a> */}
 							<button><a href='#top'>top</a></button>
 							<hr />
 							<h3>Van Jam Trio</h3>
 							<h5>II III II III II III II III II III II III II III</h5>
 							<p>keyboards, bass, drums trio playing in the van, various locations in Boston and Cambridge</p>
-							<iframe width="300" height="200" src="https://www.youtube.com/embed/LzFNFoEXU0g" frameBorder="0" allowFullScreen></iframe>
-							<iframe width="300" height="200" src="https://www.youtube.com/embed/tifEHy6QM_8" frameBorder="0" allowFullScreen></iframe>
-							<iframe width="300" height="200" src="https://www.youtube.com/embed/LQKqf6At6ko" frameBorder="0" allowFullScreen></iframe>
+							{/* <iframe width="300" height="200" src="https://www.youtube.com/embed/LzFNFoEXU0g" frameBorder="0" allowFullScreen></iframe> */}
+							{/* <iframe width="300" height="200" src="https://www.youtube.com/embed/tifEHy6QM_8" frameBorder="0" allowFullScreen></iframe> */}
+							{/* <iframe width="300" height="200" src="https://www.youtube.com/embed/LQKqf6At6ko" frameBorder="0" allowFullScreen></iframe> */}
 						</Col>
 					</Row>
 
 					<Row>
 						<Col xs="12">
 							<br /><br />
-							<a name='solopiano'></a>
+							{/* <a name='solopiano'></a> */}
 							<button><a href='#top'>top</a></button>
 							<hr />
 							<h3>Solo Jazz Piano</h3>
 							<h5>II III II III II III II III II III II III II III</h5>
 						</Col>
 						<Col xs="4">
-							<iframe width="300" height="540" scrolling="no" frameBorder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/207129494andamp;color=%23ff5500andamp;auto_play=falseandamp;hide_related=falseandamp;show_comments=trueandamp;show_user=trueandamp;show_reposts=false"></iframe>
+							{/* <iframe width="300" height="540" scrolling="no" frameBorder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/207129494andamp;color=%23ff5500andamp;auto_play=falseandamp;hide_related=falseandamp;show_comments=trueandamp;show_user=trueandamp;show_reposts=false"></iframe> */}
 						</Col>
 						<Col xs="8">
-							<iframe width="300" height="215" src="https://www.youtube.com/embed/8Sl2DtChnw4" frameBorder="0" allowFullScreen></iframe>
+							{/* <iframe width="300" height="215" src="https://www.youtube.com/embed/8Sl2DtChnw4" frameBorder="0" allowFullScreen></iframe> */}
 						</Col>
 					</Row>
 				</Container>
@@ -144,19 +143,19 @@ class Music extends Component {
 					<Row>
 						<Col xs="12">
 							<br /><br />
-							<a name='salsa'></a>
+							{/* <a name='salsa'></a> */}
 							<button><a href='#top'>top</a></button>
 							<hr />
 							<h3>Salsa Grupo</h3>
 							<h5>II III II III II III II III II III II III II III</h5>
-							<iframe width="300" height="250" src="https://www.youtube.com/embed/j7PBcEiBrck" frameBorder="1" allowFullScreen></iframe>
-							<iframe width="300" height="250" src="https://www.youtube.com/embed/unSYVFLMaK8" frameBorder="1" allowFullScreen></iframe>
-							<iframe width="300" height="250" src="https://www.youtube.com/embed/VzhjMeHs_5o" frameBorder="1" allowFullScreen></iframe>
+							{/* <iframe width="300" height="250" src="https://www.youtube.com/embed/j7PBcEiBrck" frameBorder="1" allowFullScreen></iframe> */}
+							{/* <iframe width="300" height="250" src="https://www.youtube.com/embed/unSYVFLMaK8" frameBorder="1" allowFullScreen></iframe> */}
+							{/* <iframe width="300" height="250" src="https://www.youtube.com/embed/VzhjMeHs_5o" frameBorder="1" allowFullScreen></iframe> */}
 						</Col>
 					</Row>
 					<Row>
 						<Col xs="12">
-							<a name='resume' />
+							{/* <a name='resume' /> */}
 							<button><a href='#top'>top</a></button>
 							<hr />
 							<h3>Resume</h3>

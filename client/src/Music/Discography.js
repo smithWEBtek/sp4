@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Container, Row, Col } from 'reactstrap'
 import { connect } from 'react-redux'
 import * as actions from '../store/actions/index'
+// import { Image, Video, Transformation, CloudinaryContext } from 'cloudinary-react';
 
 class Discography extends Component {
 	state = {
@@ -11,7 +12,7 @@ class Discography extends Component {
 	componentDidMount() {
 		this.props.onFetchAssets()
 		this.setState({ images: this.props.assets })
-		console.log('[Discography]', this.state.images)
+		console.log('[Discography]', this.props.assets)
 	}
 
 	render() {
@@ -23,6 +24,7 @@ class Discography extends Component {
 							<h3>Discography</h3>
 							<h5>II III II III II III II III II III II III II III</h5>
 							<iframe
+								title='blum recording'
 								width="500"
 								height="200"
 								src="https://www.youtube.com/embed/OSkmEbcF0A0?rel=0"
@@ -37,7 +39,7 @@ class Discography extends Component {
 
 					<Row>
 						<Col xs="2">
-							<img src="./Assets/Images/rec/blum-commit" className='img' />
+							{/* <img src="./Assets/Images/rec/blum-commit" className='img' /> */}
 						</Col>
 						<Col xs="4">
 							<strong>Chasin' Oscar</strong>
@@ -51,7 +53,7 @@ class Discography extends Component {
 
 					<Row>
 						<Col xs="2">
-							<img src="./Assets/Images/rec/blum-commit.jpg" className='img' />
+							{/* <img src="./Assets/Images/rec/blum-commit.jpg" className='img' /> */}
 						</Col>
 						<Col xs="4">
 							<strong>Commitment</strong>
@@ -67,7 +69,7 @@ class Discography extends Component {
 
 					<Row>
 						<Col xs="2">
-							<img src="./Assets/Images/rec/blum-init.jpg" className='img' />
+							{/* <img src="./Assets/Images/rec/blum-init.jpg" className='img' /> */}
 						</Col>
 						<Col xs="4">
 							<strong>Initiation</strong>
@@ -82,7 +84,7 @@ class Discography extends Component {
 
 					<Row>
 						<Col xs="2">
-							<img src="./Assets/Images/rec/chris.jpg" className='img' />
+							{/* <img src="./Assets/Images/rec/chris.jpg" className='img' /> */}
 						</Col>
 						<Col xs="4">
 							<strong>Chris Plays Ray</strong>
@@ -96,7 +98,7 @@ class Discography extends Component {
 
 					<Row>
 						<Col xs="2">
-							<img src="./Assets/Images/rec/bees.jpg" className='img' />
+							{/* <img src="./Assets/Images/rec/bees.jpg" className='img' /> */}
 						</Col>
 						<Col xs="4">
 							<strong>Live Evil</strong>
@@ -110,7 +112,7 @@ class Discography extends Component {
 
 					<Row>
 						<Col xs="2">
-							<img src="./Assets/Images/rec/simone.jpg" className='img' />
+							{/* <img src="./Assets/Images/rec/simone.jpg" className='img' /> */}
 						</Col>
 						<Col xs="4">
 							<strong>Take My Love</strong>
@@ -124,7 +126,7 @@ class Discography extends Component {
 
 					<Row>
 						<Col xs="2">
-							<img src="./Assets/Images/rec/alphonso.jpg" className='img' />
+							{/* <img src="./Assets/Images/rec/alphonso.jpg" className='img' /> */}
 						</Col>
 						<Col xs="4">
 							<p>At The Edge</p>
@@ -153,4 +155,4 @@ const mapDispatchToProps = dispatch => {
 	}
 }
 
-export default connect(null, mapDispatchToProps)(Discography)
+export default connect(mapStateToProps, mapDispatchToProps)(Discography)
