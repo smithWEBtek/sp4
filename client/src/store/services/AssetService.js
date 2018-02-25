@@ -1,7 +1,5 @@
-// const CLOUD_API_URL = process.env.CLOUD_API_URL
-// const CLOUD_API_URL = 'https://777466575657829:g7KcOFtLuC_0ZK5HMKNl3c48AJI@api.cloudinary.com/v1_1/smithwebtek'
-
-const CLOUD_API_URL = 'https://res.cloudinary.com/smithwebtek/image/list/album.json'
+const API_URL = 'http://127.0.0.1:3001/api' || 'https://swt-sp4.herokuapp.com/api'
+// const API_URL = 'https://swt-sp4.herokuapp.com/api'
 
 const AssetService = {
 	createAsset(asset) {
@@ -10,14 +8,14 @@ const AssetService = {
 			body: JSON.stringify({ asset: asset }),
 			headers: { 'Content-Type': 'application/json' }
 		}
-		return fetch(`${CLOUD_API_URL}/assets`, request)
+		return fetch(`${API_URL}/assets`, request)
 			.then(response => response.json())
 			.catch(error => {
 				console.log('[apiservice][createAsset] ERROR: ', error)
 			})
 	},
 	fetchAssets() {
-		return fetch(`${CLOUD_API_URL}`)
+		return fetch(`${API_URL}/assets`)
 			.then(response => response.json())
 			.catch(error => {
 				console.log('[apiservice][fetchAssets] ERROR: ', error)
@@ -29,7 +27,7 @@ const AssetService = {
 			body: JSON.stringify({ asset: data }),
 			headers: { 'Content-Type': 'application/json' }
 		}
-		return fetch(`${CLOUD_API_URL}/assets/${data.id}`, request)
+		return fetch(`${API_URL}/assets/${data.id}`, request)
 			.then(response => response.json())
 			.catch(error => {
 				console.log('[apiservice][updateAsset] ERROR: ', error)
@@ -41,7 +39,7 @@ const AssetService = {
 			body: JSON.stringify({ id: id }),
 			headers: { 'Content-Type': 'application/json' }
 		}
-		return fetch(`${CLOUD_API_URL}/assets/${id}`, request)
+		return fetch(`${API_URL}/assets/${id}`, request)
 			.then(response => response.json())
 			.catch(error => {
 				console.log('[apiservice][deleteAsset] ERROR: ', error)

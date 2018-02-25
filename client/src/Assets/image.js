@@ -288,6 +288,5 @@ const folders = [
 			type: "upload",
 			created_at: "2018-02-24T16:36:09Z"
 		}
-	],
-		updated_at: "2018-02-25T19:19:47Z"
+	]
 }

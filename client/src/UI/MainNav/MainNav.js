@@ -13,14 +13,15 @@ class MainNav extends Component {
 						<Link to='/'>SmithPiano</Link>
 					</div>
 					<Nav navbar>
-						<button className="Item"><Link to='/appquest' >schedule appt</Link></button>
-						<button className="Item"><Link to='/appts' >appts</Link></button>
-						<button className="Item"><Link to='/inspection' >inspection</Link></button>
-						<button className="Item"><Link to='/techbio' >tech bio</Link></button>
-						<button className="Item"><Link to='/music' >music</Link></button>
-						<button className="Item"><Link to='/lessons' >lessons</Link></button>
-						<button className="Item"><Link to='/contact' >contact</Link></button>
-						<button className="Item"><Link to='/customers' >customers</Link></button>
+						<button className="Item"><Link to='/appquest'>schedule appt</Link></button>
+						<button className="Item"><Link to='/appts'>appts</Link></button>
+						<button className="Item"><Link to='/inspection'>inspection</Link></button>
+						<button className="Item"><Link to='/techbio'>tech bio</Link></button>
+						<button className="Item"><Link to='/music'>music</Link></button>
+						<button className="Item"><Link to='/lessons'>lessons</Link></button>
+						<button className="Item"><Link to='/contact'>contact</Link></button>
+						<button className="Item"><Link to='/customers'>customers</Link></button>
+						<button className="Item"><Link to='/assets'>Assets</Link></button>
 					</Nav>
 				</Navbar >
 				<div>

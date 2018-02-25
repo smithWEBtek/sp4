@@ -10,9 +10,9 @@ class Api::AssetsController < ApplicationController
 	end
 
 	def create
-		@asset = Asset.new(asset_params)
-		if @asset.save
-			render json: @asset
+		asset = Asset.new(asset_params)
+		if asset.save
+			render json: asset
 		else
 			render json: { errors: { message: 'asset NOT updated' }}
 		end

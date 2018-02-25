@@ -14,6 +14,8 @@ import Music from '../src/Music/Music'
 import TechBio from '../src/TechBio/TechBio'
 import Contact from '../src/Contact/Contact'
 import AppQuest from '../src/Appts/Schedule/AppQuest'
+import Assets from '../src/Assets/Assets'
+
 
 class App extends Component {
 	render() {
@@ -30,7 +32,7 @@ class App extends Component {
 					<Route path="/lessons" component={Lessons} />
 					<Route path="/contact" component={Contact} />
 					<Route path="/appquest" component={AppQuest} />
-					<Route path="/customers" component={Customers} />
+					<Route path="/assets" component={Assets} />
 				</Aux>
 				<div className="Center">
 					<hr />

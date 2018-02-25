@@ -5,7 +5,7 @@ import AssetService from '../services/AssetService'
 export const createAssetStart = () => {
 	return { type: actionTypes.CREATE_ASSET_START }
 }
-export const createAssetSuccess = () => {
+export const createAssetSuccess = (assets) => {
 	return { type: actionTypes.CREATE_ASSET_SUCCESS }
 }
 export const createAssetFail = (error) => {
@@ -39,17 +39,12 @@ export const fetchAssetsFail = (error) => {
 	return { type: actionTypes.FETCH_ASSETS_FAIL, error: error }
 }
 
-// export const syncDatabaseAssets = (assets) => {
-// 	return { type: actionTypes.SYNC_DB_ASSETS, assetsList: assets }
-// }
-
 export const fetchAssets = () => {
 	return dispatch => {
 		dispatch(fetchAssetsStart())
 		AssetService.fetchAssets()
 			.then(response => {
-				dispatch({ type: actionTypes.FETCH_ASSETS, assetsList: response.resources })
-				// dispatch(syncDatabaseAssets())
+				dispatch({ type: actionTypes.FETCH_ASSETS, assetsList: response })
 				dispatch(fetchAssetsSuccess())
 			})
 			.catch(error => {

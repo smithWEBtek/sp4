@@ -3,15 +3,15 @@ DATA_assets = {
   :asset_keys =>
     ["public_id", "version", "format", "width", "height", "base_url", "url"],
   :assets => [		
-		["sp-site/album-simone", "1519490171", "jpg", "600", "600"],
-		["sp-site/album-michael-blum-initiation", "1519490170", "jpg", "960", "960"],
-		["sp-site/album-chris", "1519490170", "jpg", "215", "215"],
-		["sp-site/album-blum-oscar", "1519490170", "jpg", "703", "739"],
-		["sp-site/album-blum-init", "1519490170", "jpg", "960", "960"],
-		["sp-site/album-reef", "1519490170", "jpg", "161", "160"],
-		["sp-site/album-blum-commit", "1519490170", "jpg", "500", "500"],
-		["sp-site/album-alphonso", "1519490169", "jpg", "650", "637"],
-		["sp-site/album-bees", "1519490169", "jpg", "110", "110"]
+		["sp-site/album-simone", 1519490171, "jpg", "600", "600",  'https://res.cloudinary.com/smithwebtek/image/upload/v'],
+		["sp-site/album-michael-blum-initiation", 1519490170, "jpg", "960", "960",  'https://res.cloudinary.com/smithwebtek/image/upload/v'],
+		["sp-site/album-chris", 1519490170, "jpg", "215", "215",  'https://res.cloudinary.com/smithwebtek/image/upload/v'],
+		["sp-site/album-blum-oscar", 1519490170, "jpg", "703", "739",  'https://res.cloudinary.com/smithwebtek/image/upload/v'],
+		["sp-site/album-blum-init", 1519490170, "jpg", "960", "960",  'https://res.cloudinary.com/smithwebtek/image/upload/v'],
+		["sp-site/album-reef", 1519490170, "jpg", "161", "160",  'https://res.cloudinary.com/smithwebtek/image/upload/v'],
+		["sp-site/album-blum-commit", 1519490170, "jpg", "500", "500",  'https://res.cloudinary.com/smithwebtek/image/upload/v'],
+		["sp-site/album-alphonso", 1519490169, "jpg", "650", "637",  'https://res.cloudinary.com/smithwebtek/image/upload/v'],
+		["sp-site/album-bees", 1519490169, "jpg", "110", "110",  'https://res.cloudinary.com/smithwebtek/image/upload/v']
   ]
 }
 
@@ -20,7 +20,8 @@ def make_assets
     new_asset = Asset.new
     asset.each_with_index do |attribute, i|
       new_asset.send(DATA_assets[:asset_keys][i]+"=", attribute)
-    end
+		end
+		new_asset.url = "#{new_asset.base_url}#{new_asset.version}/#{new_asset.public_id}.#{new_asset.format}"
     new_asset.save
   end
 end
@@ -109,13 +110,13 @@ end
 def load_customers
 	Customer.import_data
 end
-
+ 
 def main
-	make_assets
 	make_services
 	load_customers
 	make_appts
 	make_appt_services
+	make_assets
 end
 
 main
