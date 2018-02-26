@@ -36,7 +36,7 @@ const store = createStore(rootReducer, composeEnhancers(applyMiddleware(logger, 
 
 const app = (
 	<Provider store={store}>
-		<BrowserRouter>
+		<BrowserRouter basename="/swt-sp4.herokuapp.com/">
 			<App />
 		</BrowserRouter>
 	</Provider>
