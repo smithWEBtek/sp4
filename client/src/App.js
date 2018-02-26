@@ -23,16 +23,16 @@ class App extends Component {
 			<Container className="App">
 				<MainNav />
 				<Aux>
-					<Route path="/customers" component={Customers} />
-					<Route path="/appts" component={Appts} />
-					<Route path="/services" component={Services} />
-					<Route path="/inspection" component={Inspection} />
-					<Route path="/techbio" component={TechBio} />
-					<Route path="/music" component={Music} />
-					<Route path="/lessons" component={Lessons} />
-					<Route path="/contact" component={Contact} />
-					<Route path="/appquest" component={AppQuest} />
-					<Route path="/assets" component={Assets} />
+					<Route exact path="/customers" component={Customers} />
+					<Route exact path="/appts" component={Appts} />
+					<Route exact path="/services" component={Services} />
+					<Route exact path="/inspection" component={Inspection} />
+					<Route exact path="/techbio" component={TechBio} />
+					<Route exact path="/music" component={Music} />
+					<Route exact path="/lessons" component={Lessons} />
+					<Route exact path="/contact" component={Contact} />
+					<Route exact path="/appquest" component={AppQuest} />
+					<Route exact path="/assets" component={Assets} />
 				</Aux>
 				<div className="Center">
 					<hr />

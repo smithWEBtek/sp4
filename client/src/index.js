@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter, Route } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
@@ -36,7 +36,7 @@ const store = createStore(rootReducer, composeEnhancers(applyMiddleware(logger, 
 
 const app = (
 	<Provider store={store}>
-		<BrowserRouter basename="/">
+		<BrowserRouter>
 			<App />
 		</BrowserRouter>
 	</Provider>
