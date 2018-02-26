@@ -24,7 +24,7 @@ class Recordings extends Component {
 				<Container>
 					<Row key={index} className='Album'>
 						<Col className="col-xs-3">
-							{rec.asset.base_url ? <img src={rec.asset.url} width='190' height='190' alt="recording" /> :
+							{rec.asset.format === 'jpg' ? <img src={rec.asset.url} width='190' height='190' alt="recording" /> :
 								<iframe title="video" width="190" height="190"
 									src="https://www.youtube.com/embed/OSkmEbcF0A0"
 									frameBorder="0" allow="autoplay"></iframe>}

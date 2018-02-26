@@ -38,6 +38,6 @@ class Api::AssetsController < ApplicationController
 		end
 
 		def asset_params
-			params.require(:asset).permit(:title, :category, :format, :location, :url)
+			params.require(:asset).permit(:title, :category, :description, :format, :url)
 		end
 end

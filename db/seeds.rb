@@ -86,17 +86,36 @@ end
 
 DATA_assets = {
   :asset_keys =>
-    ["public_id", "version", "format", "width", "height", "base_url", "url"],
-  :assets => [		
-		["sp-site/album-alphonso", 1519490169, "jpg", "215", "215",  'https://res.cloudinary.com/smithwebtek/image/upload/v'],
-		["sp-site/album-simone", 1519490171, "jpg", "215", "215",  'https://res.cloudinary.com/smithwebtek/image/upload/v'],
-		["sp-site/album-chris", 1519490170, "jpg", "215", "215",  'https://res.cloudinary.com/smithwebtek/image/upload/v'],
-		["sp-site/album-bees", 1519490169, "jpg", "215", "215",  'https://res.cloudinary.com/smithwebtek/image/upload/v'],
-		["sp-site/album-michael-blum-initiation", 1519490170, "jpg", "215", "215",  'https://res.cloudinary.com/smithwebtek/image/upload/v'],
-		["sp-site/album-blum-commit", 1519490170, "jpg", "215", "215",  'https://res.cloudinary.com/smithwebtek/image/upload/v'],
-		["sp-site/album-blum-oscar", 1519490170, "jpg", "215", "215",  'https://res.cloudinary.com/smithwebtek/image/upload/v'],
-		["sp-site/album-wesn", 1519490169, "jpg", "215", "215",  nil, "https://www.youtube.com/watch?v=OSkmEbcF0A0"]
-  ]
+		["title", "category", "description", "format", "url"],
+  :assets => [
+	['album-alphonso', 'recording', 'session', 'jpg',	'https://res.cloudinary.com/smithwebtek/image/upload/v1519490169/sp-site/album-alphonso.jpg'],
+	['album-simone', 'recording', 'session', 'jpg', 'https://res.cloudinary.com/smithwebtek/image/upload/v1519490171/sp-site/album-simone.jpg'],
+	['album-chris', 'recording', 'session', 'jpg', 'https://res.cloudinary.com/smithwebtek/image/upload/v1519490170/sp-site/album-chris.jpg'],
+	['album-bees', 'recording', 'session', 'jpg','https://res.cloudinary.com/smithwebtek/image/upload/v1519490169/sp-site/album-bees.jpg'],
+	['album-michael-blum-initiation', 'recording', 'session', 'jpg','https://res.cloudinary.com/smithwebtek/image/upload/v1519490170/sp-site/album-michael-blum-initiation.jpg'],
+	['album-blum-commit', 'recording', 'session', 'jpg','https://res.cloudinary.com/smithwebtek/image/upload/v1519490170/sp-site/album-blum-commit.jpg'],
+	['album-blum-oscar', 'recording', 'session', 'jpg','https://res.cloudinary.com/smithwebtek/image/upload/v1519490170/sp-site/album-blum-oscar.jpg'],
+	['album-blum-wesn', 'recording', 'session', 'vid','https://www.youtube.com/embed/OSkmEbcF0A0'],
+	["Brad Smith keyboard demo reel", "music", "demo reel", "vid", "https://www.youtube.com/embed/w8kmVYpY-Dc?rel=0"],
+	["Brad Smith solo piano", "music", "solo piano", "vid", "https://www.youtube.com/embed/8Sl2DtChnw4"],
+	["Funk Rock Trio sample 1", "music", "Funk Rock Trio", "vid", "https://www.youtube.com/embed/KhY47CvgsQ4"],
+	["Funk Rock Trio sample 2", "music", "Funk Rock Trio", "vid", "https://www.youtube.com/embed/sn3P9Ei58D0"],
+	["Funk Rock Trio sample 3", "music", "Funk Rock Trio", "vid", "https://www.youtube.com/embed/WSEFKzdlrGM"],
+	["Funk Rock Trio sample 4", "music", "Funk Rock Trio", "vid", "https://www.youtube.com/embed/Q1KJ5Mxnaps"],
+	["Funk Rock Trio sample 5", "music", "Funk Rock Trio", "vid", "https://www.youtube.com/embed/keS0riw3nHw"],
+	["Cabaret Trio sample 1", "music", "Vocalist, keyboards w/left-hand bass, drums", "vid", "https://www.youtube.com/embed/sZfEtsbbtHA"],
+	["Cabaret Trio sample 2", "music", "Vocalist, keyboards w/left-hand bass, drums", "vid", "https://www.youtube.com/embed/Behsbq2fRio?rel=0"],
+	["Cabaret Trio sample 3", "music", "Vocalist, keyboards w/left-hand bass, drums", "vid", "https://www.youtube.com/embed/GkKpxkcFPvw?rel=0"],
+	["Jazz Piano Trio sample 1", "music", "Piano, bass, drums", "vid", "https://www.youtube.com/embed/b3FDVFas-wY"],
+	["Jazz Piano Trio sample 2", "music", "Piano, bass, drums", "vid", "https://www.youtube.com/embed/uHAVx-BdAbg"],
+	["Jazz Piano Trio sample 3", "music", "Piano, bass, drums", "vid", "http://www.ustream.tv/embed/recorded/108639266?html5ui"],
+	["Van Jam Trio sample 1", "music", "Keyboards, bass, drums trio playing in the van", "vid", "https://www.youtube.com/embed/LzFNFoEXU0g"],
+	["Van Jam Trio sample 2", "music", "Keyboards, bass, drums trio playing in the van", "vid", "https://www.youtube.com/embed/tifEHy6QM_8"],
+	["Van Jam Trio sample 3", "music", "Keyboards, bass, drums trio playing in the van", "vid", "https://www.youtube.com/embed/LQKqf6At6ko"],
+	["Salsa Grupo sample 1", "music", "Various Salsa bands", "vid", "https://www.youtube.com/embed/j7PBcEiBrck"],
+	["Salsa Grupo sample 2", "music", "Various Salsa bands", "vid", "https://www.youtube.com/embed/unSYVFLMaK8"],
+	["Salsa Grupo sample 3", "music", "Various Salsa bands", "vid", "https://www.youtube.com/embed/VzhjMeHs_5o"]
+	]
 }
 
 def make_assets
@@ -105,7 +124,6 @@ def make_assets
     asset.each_with_index do |attribute, i|
       new_asset.send(DATA_assets[:asset_keys][i]+"=", attribute)
 		end
-		new_asset.url = "#{new_asset.base_url}#{new_asset.version}/#{new_asset.public_id}.#{new_asset.format}" if !new_asset.base_url.nil?
     new_asset.save
   end
 end

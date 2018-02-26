@@ -1,3 +1,3 @@
 class AssetSerializer < ActiveModel::Serializer
-	attributes :id, :public_id, :version, :format, :width, :height, :base_url, :url
+	attributes :id, :title, :category, :description, :format, :url
 end

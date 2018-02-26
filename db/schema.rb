@@ -33,12 +33,10 @@ ActiveRecord::Schema.define(version: 20180225231839) do
   end
 
   create_table "assets", force: :cascade do |t|
-    t.string "public_id"
-    t.integer "version"
+    t.string "title"
+    t.string "category"
+    t.string "description"
     t.string "format"
-    t.integer "width", default: 110
-    t.integer "height", default: 110
-    t.string "base_url"
     t.string "url"
   end
 

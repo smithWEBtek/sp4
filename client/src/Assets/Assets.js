@@ -14,6 +14,9 @@ class Assets extends Component {
 		this.setState({ assets: this.props.assets })
 	}
 
+
+
+
 	render() {
 		let { assets } = this.props
 		let sortedAssets = assets.sort((a, b) => a.id > b.id ? -1 : a.id < b.id ? 1 : 0)
@@ -23,30 +26,41 @@ class Assets extends Component {
 					<tr>
 						<th scope="row">{asset.id}</th>
 						<td>
-							{asset.public_id}
+							{asset.format === 'jpg' ? <img src={asset.url} width='80' height='80' alt="asset.version" /> :
+								asset.format === 'vid' ?
+									<iframe title="video" width="80" height="80"
+										src={asset.url}
+										frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> : null}
+						</td>
+						<td>
+							{asset.title}
+						</td>
+						<td>
+							{asset.category}
+						</td>
+						<td>
+							{asset.description}
 						</td>
 						<td>
 							{asset.format}
-						</td>
-						<td>
-							{asset.base_url ? <img src={asset.url} width='215' height='215' alt="asset.version" /> :
-								<iframe title="video" width="215" height="215"
-									src="https://www.youtube.com/embed/OSkmEbcF0A0"
-									frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>}
 						</td>
 					</tr>
 				</Aux>
 			)
 		})
 
+		// ["title", "category", "description", "format", "url"],
 		return (
 			<div>
 				<Table striped size="sm" className="CustomersList">
 					<thead>
 						<tr>
-							<th>public_id</th>
+							<th>id</th>
+							<th>asset</th>
+							<th>title</th>
+							<th>category</th>
+							<th>description</th>
 							<th>format</th>
-							<th>url</th>
 						</tr>
 					</thead>
 					<tbody>
