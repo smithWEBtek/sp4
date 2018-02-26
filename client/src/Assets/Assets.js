@@ -14,9 +14,6 @@ class Assets extends Component {
 		this.setState({ assets: this.props.assets })
 	}
 
-
-
-
 	render() {
 		let { assets } = this.props
 		let sortedAssets = assets.sort((a, b) => a.id > b.id ? -1 : a.id < b.id ? 1 : 0)
