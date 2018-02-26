@@ -145,7 +145,7 @@ class Discography extends Component {
 
 const mapStateToProps = state => {
 	return {
-		assets: () => state.ast.assets
+		assets: state.ast.assets
 	}
 }
 

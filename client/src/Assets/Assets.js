@@ -12,11 +12,13 @@ class Assets extends Component {
 	componentDidMount() {
 		this.props.onFetchAssets()
 		this.setState({ assets: this.props.assets })
-		console.log('[Discography] this.state.assets', this.state.assets);
+		// 	console.log('[Discography] this.state.assets', this.state.assets);
 	}
 
 	render() {
-		let list = this.state.assets.map((asset, index) => {
+		let { assets } = this.props
+
+		let list = assets.map((asset, index) => {
 			return (
 				<Aux key={index}>
 					<tr>
@@ -28,13 +30,10 @@ class Assets extends Component {
 							{asset.format}
 						</td>
 						<td>
-							{asset.base_url}
-						</td>
-						<td>
-							{asset.url}
-						</td>
-						<td>
-							{asset.version}
+							{asset.base_url ? <img src={asset.url} width='215' height='215' /> :
+								<iframe width="215" height="215"
+									src="https://www.youtube.com/embed/OSkmEbcF0A0"
+									frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>}
 						</td>
 					</tr>
 				</Aux>
@@ -48,9 +47,7 @@ class Assets extends Component {
 						<tr>
 							<th>public_id</th>
 							<th>format</th>
-							<th>base_url</th>
 							<th>url</th>
-							<th>version</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -64,7 +61,7 @@ class Assets extends Component {
 
 const mapStateToProps = state => {
 	return {
-		assets: () => state.ast.assets
+		assets: state.ast.assets
 	}
 }
 
