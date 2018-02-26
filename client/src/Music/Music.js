@@ -228,9 +228,7 @@ class Music extends Component {
 						</Col>
 					</Row>
 					<Row>
-						<Col xs="12">
-							<Recordings />
-						</Col>
+						<Recordings />
 					</Row>
 				</Container>
 			</div>

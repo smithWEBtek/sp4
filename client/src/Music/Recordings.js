@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Row, Col } from 'reactstrap'
+import { Container, Row, Col } from 'reactstrap';
 import { connect } from 'react-redux'
 import * as actions from '../store/actions/index'
 // import { Image, Video, Transformation, CloudinaryContext } from 'cloudinary-react';
@@ -21,31 +21,31 @@ class Recordings extends Component {
 	render() {
 		let renderedRecordings = this.props.recordings.map((rec, index) => {
 			return (
-				<Row key={index} className='Album'>
-					<Col xm="3">
-						{rec.asset.base_url ? <img src={rec.asset.url} width='215' height='215' alt="recording" /> :
-							<iframe title="video" width="215" height="215"
-								src="https://www.youtube.com/embed/OSkmEbcF0A0"
-								frameBorder="0" allow="autoplay"></iframe>}
-						<h3>{rec.title}</h3>
-					</Col>
-					<Col xs="4">
-						<h4>{rec.artist}</h4>
-						<p>{rec.year} : {rec.location}</p>
-					</Col>
-					<Col xs="4">
-						{rec.credits}
-					</Col>
-				</Row>
+				<Container>
+					<Row key={index} className='Album'>
+						<Col className="col-xs-3">
+							{rec.asset.base_url ? <img src={rec.asset.url} width='190' height='190' alt="recording" /> :
+								<iframe title="video" width="190" height="190"
+									src="https://www.youtube.com/embed/OSkmEbcF0A0"
+									frameBorder="0" allow="autoplay"></iframe>}
+						</Col>
+						<Col className="col-xs-4">
+							<h3>{rec.title}</h3>
+							<h4>{rec.artist}</h4>
+							<p>{rec.year} : {rec.location}</p>
+						</Col>
+						<Col className="col-xs-4">
+							<p>{rec.credits}</p>
+						</Col>
+					</Row >
+				</Container >
 			)
 		})
 
-
 		return (
 			<div>
-				<h4>recordings...</h4>
 				{renderedRecordings}
-			</div>
+			</div >
 		)
 	}
 }
