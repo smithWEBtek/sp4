@@ -1,4 +1,4 @@
-class RecordingsController < ApplicationController
+class Api::RecordingsController < ApplicationController
 	before_action :set_recording, only: [:show, :update, :destroy]
 	def index
 		@recordings = Recording.all

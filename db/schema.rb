@@ -68,10 +68,10 @@ ActiveRecord::Schema.define(version: 20180225231839) do
   create_table "recordings", force: :cascade do |t|
     t.integer "asset_id"
     t.string "title"
-    t.text "description"
-    t.text "credits"
+    t.text "artist"
     t.text "year"
     t.text "location"
+    t.text "credits"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

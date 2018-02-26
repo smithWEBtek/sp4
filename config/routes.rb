@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
-  resources :recordings
-  resources :appt_services
-	root 'api/static#index'
 
+	root 'api/static#index'
+	
 	namespace :api do
   	resources :services
+		resources :appt_services
   	resources :customers
   	resources :appts
-  	resources :assets
+		resources :assets
+		resources :recordings
 	end
 end

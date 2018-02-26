@@ -1,32 +1,4 @@
 
-DATA_assets = {
-  :asset_keys =>
-    ["public_id", "version", "format", "width", "height", "base_url", "url"],
-  :assets => [		
-		["sp-site/album-simone", 1519490171, "jpg", "215", "215",  'https://res.cloudinary.com/smithwebtek/image/upload/v'],
-		["sp-site/album-michael-blum-initiation", 1519490170, "jpg", "215", "215",  'https://res.cloudinary.com/smithwebtek/image/upload/v'],
-		["sp-site/album-chris", 1519490170, "jpg", "215", "215",  'https://res.cloudinary.com/smithwebtek/image/upload/v'],
-		["sp-site/album-blum-oscar", 1519490170, "jpg", "215", "215",  'https://res.cloudinary.com/smithwebtek/image/upload/v'],
-		["sp-site/album-blum-init", 1519490170, "jpg", "215", "215",  'https://res.cloudinary.com/smithwebtek/image/upload/v'],
-		["sp-site/album-reef", 1519490170, "jpg", "215", "215",  'https://res.cloudinary.com/smithwebtek/image/upload/v'],
-		["sp-site/album-blum-commit", 1519490170, "jpg", "215", "215",  'https://res.cloudinary.com/smithwebtek/image/upload/v'],
-		["sp-site/album-alphonso", 1519490169, "jpg", "215", "215",  'https://res.cloudinary.com/smithwebtek/image/upload/v'],
-		["sp-site/album-bees", 1519490169, "jpg", "215", "215",  'https://res.cloudinary.com/smithwebtek/image/upload/v'],
-		["sp-site/album-wesn", 1519490169, "jpg", "215", "215",  nil, "https://www.youtube.com/watch?v=OSkmEbcF0A0"]
-  ]
-}
-
-def make_assets
-  DATA_assets[:assets].each do |asset|
-    new_asset = Asset.new
-    asset.each_with_index do |attribute, i|
-      new_asset.send(DATA_assets[:asset_keys][i]+"=", attribute)
-		end
-		new_asset.url = "#{new_asset.base_url}#{new_asset.version}/#{new_asset.public_id}.#{new_asset.format}" if !new_asset.base_url.nil?
-    new_asset.save
-  end
-end
-
 DATA_services = {
   :service_keys =>
 	["title", "months_since_last_svc", "cost", "duration"],
@@ -111,32 +83,51 @@ end
 def load_customers
 	Customer.import_data
 end
- 
+
+DATA_assets = {
+  :asset_keys =>
+    ["public_id", "version", "format", "width", "height", "base_url", "url"],
+  :assets => [		
+		["sp-site/album-alphonso", 1519490169, "jpg", "215", "215",  'https://res.cloudinary.com/smithwebtek/image/upload/v'],
+		["sp-site/album-simone", 1519490171, "jpg", "215", "215",  'https://res.cloudinary.com/smithwebtek/image/upload/v'],
+		["sp-site/album-chris", 1519490170, "jpg", "215", "215",  'https://res.cloudinary.com/smithwebtek/image/upload/v'],
+		["sp-site/album-bees", 1519490169, "jpg", "215", "215",  'https://res.cloudinary.com/smithwebtek/image/upload/v'],
+		["sp-site/album-michael-blum-initiation", 1519490170, "jpg", "215", "215",  'https://res.cloudinary.com/smithwebtek/image/upload/v'],
+		["sp-site/album-blum-commit", 1519490170, "jpg", "215", "215",  'https://res.cloudinary.com/smithwebtek/image/upload/v'],
+		["sp-site/album-blum-oscar", 1519490170, "jpg", "215", "215",  'https://res.cloudinary.com/smithwebtek/image/upload/v'],
+		["sp-site/album-wesn", 1519490169, "jpg", "215", "215",  nil, "https://www.youtube.com/watch?v=OSkmEbcF0A0"]
+  ]
+}
+
+def make_assets
+  DATA_assets[:assets].each do |asset|
+    new_asset = Asset.new
+    asset.each_with_index do |attribute, i|
+      new_asset.send(DATA_assets[:asset_keys][i]+"=", attribute)
+		end
+		new_asset.url = "#{new_asset.base_url}#{new_asset.version}/#{new_asset.public_id}.#{new_asset.format}" if !new_asset.base_url.nil?
+    new_asset.save
+  end
+end
+
 DATA_recordings = {
-  :recording_keys =>
-		["asset_id", "title", "description", "credits", "year", "location"],
+	:recording_keys =>
+	["asset_id", "title", "artist", "year", "location", "credits"],
   :recordings => [		
-		[10,
-		"Wes'n: A Tribute to Wes Montgomery",
-		"Michael Blum Quartet",
-		"2017",
-		"Recorded at Jon Chase Studio",
-		"Michael Blum(guitar), Chip McNeill(sax), Jim Stinnett(bass), Brad Smith(piano), Dave DiCenso(drums)"],
-		
 		[1,
+		"At The Edge",
+		"Alfonso Villalonga and The Cabaret Rose",
+		"1990",
+		"Recorded at Blue Jay Studios, Carlisle, MA",
+		"Alfonso Villalonga (vocalist, composer, arranger, conductor), Alan Bern (accordion), Bob Nieske (bass), Matt Wilson (drums),Johaness Ammon (violin), Jeff Warschauer (mandolin), Bryndis Baldursson (cello), Cece Giannotti (guitar), Dr No (drums), Roy Okutani (trumpet), Billy Novick (clarinet), Curtis Hasselbrink (trombone), Bevan Manson and Brad Smith (piano)"],
+		
+		[2,
 		"Take My Love",
 		"Simone Waddel",
 		"1996",
 		"Recorded at Blue Jay Studios, Carlisle, MA",
 		"Simone Waddel (vocals, composer), Jim Stinnett (bass, arranger), Tony Fesmire and Dennis Montgomery (vocals), Marco Abreu, (guitar), Charles Haynes (drums), Germmain Nelson (piano), Brad Smith (piano and keyboards)"],
 		 
-		[2,
-		"Initiation",
-		"Michael Blum Quartet",
-		"2014",
-		"Recorded at Jon Chase Studio",
-		"Michael Blum (guitar), Jim Stinnett (bass), Dom Moio (drums), Brad Smith (piano). See review of this album in the November 2014 issue of DownBeat Magazine"],
-		
 		[3, 
 		"Chris Plays Ray",
 		"Chris Mewhinney Quartet/Quintet/Trio",
@@ -144,35 +135,40 @@ DATA_recordings = {
 		"Recorded at Jon Chase Studio",
 		"Chris Mewhinney (bass), Jim Stinnett (bass), Michael Blum (Guitar), Dom Moio (drums), Brad Smith (piano)"],
 		
-		[4, 
-		"Chasin' Oscar", 
-		"Michael Blum Quartet", 
-		"June 2016", 
-		"Recorded at Jon Chase Studio",
-		"Michael Blum (guitar), Jim Stinnett (bass), Dom Moio (drums), Brad Smith (piano)"],
-		
-		[7, 
-		"Commitment",
-		"Michael Blum Quartet",
-		"Jan 2015",
-		"Recorded at Jon Chase Studio",
-		"Michael Blum DOWNBEAT MAGAZINE 2015 “RISING STAR(guitar), Jim Stinnett (bass), Dom Moio (drums), Brad Smith (piano)"],
-		
-		
-		[9,
+		[4,
 		"Live Evil",
 		"Bees Deluxe",
 		"2013",
 		"Recorded live at “The Grog” Newburyport, MA",
 		"Conrad Warre, (guitar, vocal), Brad Smith (keys/bass),Patrick Sanders (drums)"],
 			
+		[5,
+		"Initiation",
+		"Michael Blum Quartet",
+		"2014",
+		"Recorded at Jon Chase Studio",
+		"Michael Blum (guitar), Jim Stinnett (bass), Dom Moio (drums), Brad Smith (piano). See review of this album in the November 2014 issue of DownBeat Magazine"],
+		
+		[6, 
+		"Commitment",
+		"Michael Blum Quartet",
+		"Jan 2015",
+		"Recorded at Jon Chase Studio",
+		"Michael Blum DOWNBEAT MAGAZINE 2015 “RISING STAR(guitar), Jim Stinnett (bass), Dom Moio (drums), Brad Smith (piano)"],
+		
+		[7, 
+		"Chasin' Oscar", 
+		"Michael Blum Quartet", 
+		"June 2016", 
+		"Recorded at Jon Chase Studio",
+		"Michael Blum (guitar), Jim Stinnett (bass), Dom Moio (drums), Brad Smith (piano)"],
+		
 		[8,
-		"At The Edge",
-		"Alfonso Villalonga and The Cabaret Rose",
-		"1990",
-		"Recorded at Blue Jay Studios, Carlisle, MA",
-		"Alfonso Villalonga (vocalist, composer, arranger, conductor), Alan Bern (accordion), Bob Nieske (bass), Matt Wilson (drums),Johaness Ammon (violin), Jeff Warschauer (mandolin), Bryndis Baldursson (cello), Cece Giannotti (guitar), Dr No (drums), Roy Okutani (trumpet), Billy Novick (clarinet), Curtis Hasselbrink (trombone), Bevan Manson and Brad Smith (piano)"]
-			
+		"Wes'n: A Tribute to Wes Montgomery",
+		"Michael Blum Quartet",
+		"2017",
+		"Recorded at Jon Chase Studio",
+		"Michael Blum(guitar), Chip McNeill(sax), Jim Stinnett(bass), Brad Smith(piano), Dave DiCenso(drums)"]
   ]
 }
 

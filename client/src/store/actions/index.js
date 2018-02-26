@@ -22,3 +22,9 @@ export {
 	updateAsset,
 	fetchAssets
 } from './assetActions'
+export {
+	createRecording,
+	deleteRecording,
+	updateRecording,
+	fetchRecordings
+} from './recordingActions'

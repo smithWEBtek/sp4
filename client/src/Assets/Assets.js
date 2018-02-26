@@ -12,13 +12,12 @@ class Assets extends Component {
 	componentDidMount() {
 		this.props.onFetchAssets()
 		this.setState({ assets: this.props.assets })
-		// 	console.log('[Discography] this.state.assets', this.state.assets);
 	}
 
 	render() {
 		let { assets } = this.props
-
-		let list = assets.map((asset, index) => {
+		let sortedAssets = assets.sort((a, b) => a.id > b.id ? -1 : a.id < b.id ? 1 : 0)
+		let list = sortedAssets.map((asset, index) => {
 			return (
 				<Aux key={index}>
 					<tr>
@@ -30,8 +29,8 @@ class Assets extends Component {
 							{asset.format}
 						</td>
 						<td>
-							{asset.base_url ? <img src={asset.url} width='215' height='215' /> :
-								<iframe width="215" height="215"
+							{asset.base_url ? <img src={asset.url} width='215' height='215' alt="asset.version" /> :
+								<iframe title="video" width="215" height="215"
 									src="https://www.youtube.com/embed/OSkmEbcF0A0"
 									frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>}
 						</td>

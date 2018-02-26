@@ -52,28 +52,6 @@ const reducer = (state = initialState, action) => {
 				assets: assets
 			})
 
-
-		// //-----SYNC_DB_ASSETS-----------------------------
-		// case actionTypes.SYNC_DB_ASSETS_START:
-		// 	return Object.assign({}, state, { syncing: true })
-
-		// case actionTypes.SYNC_DB_ASSETS_SUCCESS:
-		// 	return Object.assign({}, state, { syncing: false })
-
-		// case actionTypes.SYNC_DB_ASSETS_FAIL:
-		// 	return Object.assign({}, state, {
-		// 		error: action.error,
-		// 		syncing: false,
-		// 		message: action.type
-		// 	})
-
-		// case actionTypes.SYNC_DB_ASSETS:
-		// 	const assets = action.assetsList
-		// 	return Object.assign({}, state, {
-		// 		assets: assets
-		// 	})
-
-
 		//-----UPDATE ASSET-----------------------------
 		case actionTypes.UPDATE_ASSET_START:
 			return Object.assign({}, state, { loading: true })

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Col, Container, Row } from 'reactstrap'
 import './Music.css'
-import Discography from './Discography'
+import Recordings from './Recordings'
 
 class Music extends Component {
 	render() {
@@ -229,7 +229,7 @@ class Music extends Component {
 					</Row>
 					<Row>
 						<Col xs="12">
-							<Discography />
+							<Recordings />
 						</Col>
 					</Row>
 				</Container>

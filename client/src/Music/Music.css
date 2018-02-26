@@ -3,3 +3,8 @@
 	width: 150px; 
 	height: 150px;
 }
+
+.Album {
+	border: 2px solid gray;
+	margin: 2px;
+}

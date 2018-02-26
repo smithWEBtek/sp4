@@ -9,13 +9,15 @@ import customerReducer from './store/reducers/customerReducer'
 import serviceReducer from './store/reducers/serviceReducer'
 import apptReducer from './store/reducers/apptReducer'
 import assetReducer from './store/reducers/assetReducer'
+import recordingReducer from './store/reducers/recordingReducer'
 import App from './App'
 
 const rootReducer = combineReducers({
 	cst: customerReducer,
 	svc: serviceReducer,
 	apt: apptReducer,
-	ast: assetReducer
+	ast: assetReducer,
+	rec: recordingReducer
 })
 
 const logger = store => {
